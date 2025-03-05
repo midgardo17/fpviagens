@@ -4,16 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>F&P Viagens - Promoções Exclusivas</title>
-    <meta name="description" content="Aproveite nossas promoções exclusivas para destinos incríveis com a F&P Viagens.">
-    <meta name="keywords" content="promoções de viagens, passagens baratas, viagens nacionais, viagens internacionais, agência de viagens">
+    <meta name="description" content="Aproveite promoções exclusivas para destinos incríveis com a F&P Viagens – passagens baratas e atendimento premium via WhatsApp.">
+    <meta name="keywords" content="promoções de viagens, passagens baratas, viagens nacionais, viagens internacionais, agência de viagens, Machu Picchu, Paris, Bali, Nova York">
     <meta name="author" content="F&P Viagens">
+    <!-- Open Graph Meta Tags para compartilhamento social -->
     <meta property="og:title" content="F&P Viagens - Promoções Exclusivas">
-    <meta property="og:description" content="Descubra destinos incríveis com preços promocionais e atendimento premium pelo WhatsApp.">
+    <meta property="og:description" content="Passagens com preço baixo para viagens nacionais e internacionais. Você curte sua viagem, a gente se preocupa com o resto!">
     <meta property="og:image" content="images/fep-viagens-logo.png">
     <meta property="og:url" content="https://midgardo17.github.io/fpviagens">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="F&P Viagens">
+    <!-- Links de Estilo -->
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Structured Data para SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TravelAgency",
+      "name": "F&P Viagens",
+      "url": "https://midgardo17.github.io/fpviagens",
+      "logo": "https://midgardo17.github.io/fpviagens/images/fep-viagens-logo.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+55-32-99938-030",
+        "contactType": "Customer Service"
+      },
+      "sameAs": [
+        "https://instagram.com/fepviagens",
+        "https://facebook.com/fepviagens",
+        "https://x.com/fepviagens",
+        "https://linkedin.com/company/fepviagens",
+        "https://tiktok.com/@fepviagens"
+      ]
+    }
+    </script>
     <style>
         /* Animações para a seção hero */
         @keyframes fadeInDown {
@@ -43,7 +70,7 @@
         .hamburger span { width: 25px; height: 3px; background-color: white; transition: all 0.3s ease; }
 
         /* Seção Hero */
-        .hero { position: relative; height: 80vh; overflow: hidden; margin-top: 80px; }
+        .hero { position: relative; height: 80vh; overflow: hidden; margin-top: 80px; background-image: url('images/travel-backround.jpg'); background-size: cover; background-position: center; }
         .hero-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
         .hero-content { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2; text-align: center; color: white; padding: 2rem; background: rgba(0, 0, 0, 0.5); border-radius: 12px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); }
         .hero-content h1 { font-size: 3rem; margin-bottom: 1rem; font-weight: 700; text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); }
@@ -63,7 +90,7 @@
         .btn { display: inline-block; background: #25D366; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-size: 16px; transition: background 0.3s; }
         .btn:hover { background: #1EBE57; }
 
-        /* Seções Gerais (Sobre, Serviços, Promoções, Contato) */
+        /* Seções Gerais */
         .section-card { max-width: 800px; margin: 4rem auto; padding: 2rem; background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); text-align: center; }
         .section-card h2 { color: #007bff; font-size: 2.5rem; margin-bottom: 1.5rem; }
         .section-card p { font-size: 1.1rem; color: #444; line-height: 1.8; }
@@ -74,6 +101,10 @@
         .mt-4 { margin-top: 2rem; }
         .d-block { display: block; }
 
+        /* Depoimentos */
+        .depoimento-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        .depoimento-item { padding: 1.5rem; background: #f9f9f9; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); text-align: center; }
+
         /* Promoções */
         .promo-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 20px; }
         .promo-item { background: white; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); overflow: hidden; transition: transform 0.3s ease; }
@@ -82,6 +113,12 @@
         .promo-item h3 { padding: 10px; font-size: 1.5rem; color: #007bff; }
         .promo-item p { padding: 0 10px 10px; font-size: 1rem; color: #444; }
         .promo-item .btn { display: block; margin: 10px; padding: 10px; background: #25D366; color: white; text-align: center; text-decoration: none; border-radius: 5px; }
+
+        /* Contato */
+        #contact-form { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
+        #contact-form input, #contact-form textarea { padding: 1rem; border: 1px solid #ccc; border-radius: 5px; font-size: 1rem; }
+        #contact-form button { background: #25D366; color: white; padding: 1rem; border: none; border-radius: 5px; cursor: pointer; transition: background 0.3s; }
+        #contact-form button:hover { background: #1EBE57; }
 
         /* Rodapé */
         .footer { background: #007bff; color: white; text-align: center; padding: 1.5rem; margin-top: 3rem; }
@@ -111,7 +148,6 @@
             .promo-grid { grid-template-columns: repeat(2, 1fr); }
             .whatsapp-float { width: 40px; height: 40px; bottom: 10px; right: 10px; }
         }
-
         @media (max-width: 480px) {
             .promo-grid { grid-template-columns: 1fr; }
         }
@@ -121,11 +157,12 @@
     <header class="header">
         <nav class="navbar">
             <div class="logo">
-                <img src="images/fep-viagens-logo.png" alt="Logo F&P Viagens" class="logo-img" loading="lazy">
+                <img src="images/fep-viagens-logo.png" alt="Logo da F&P Viagens com globo e avião" class="logo-img" loading="lazy">
             </div>
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                <li><a href="#depoimentos" class="nav-link">Depoimentos</a></li>
                 <li><a href="#servicos" class="nav-link">Serviços</a></li>
                 <li><a href="#promocoes" class="nav-link">Promoções</a></li>
                 <li><a href="#contato" class="nav-link">Contato</a></li>
@@ -139,69 +176,78 @@
     </header>
 
     <main>
-        <section id="home" class="hero">
-            <video autoplay muted loop class="hero-video" playsinline>
+        <section id="home" class="hero" data-aos="fade-up">
+            <video autoplay muted loop class="hero-video" playsinline loading="lazy">
                 <source src="videos/video01.mp4" type="video/mp4">
                 Seu navegador não suporta vídeos.
             </video>
             <div class="hero-content">
                 <h1>Descubra Viagens Inesquecíveis</h1>
                 <p>Preços baixos para nacionais e internacionais – aproveite nossas promoções!</p>
-                <a href="https://wa.me/553299938030?text=Oi,%20quero%20aproveitar%20as%20promoções!" target="_blank" class="whatsapp-button" aria-label="Fale comigo no WhatsApp para promoções de viagem">
-                    Fale comigo no WhatsApp
-                </a>
+                <a href="https://wa.me/553299938030?text=Oi,%20quero%20aproveitar%20as%20promoções!" target="_blank" class="whatsapp-button" aria-label="Fale comigo no WhatsApp para promoções de viagem">Fale comigo no WhatsApp</a>
             </div>
         </section>
 
-        <section id="destinos-baratos" class="destinos-baratos">
-            <h2>Top 6 Destinos Baratos Saindo de São Paulo</h2>
+        <section id="destinos-internacionais" class="destinos-baratos" data-aos="fade-up">
+            <h2>Top Destinos Internacionais - América do Sul e Ásia</h2>
             <div class="destino-grid">
                 <div class="destino-card">
-                    <img src="https://images.unsplash.com/photo-1514901648737-2ef0a2f39a9e?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Brasília, DF">
-                    <h3>Brasília, DF</h3>
-                    <p>A partir de R$ 150</p>
-                    <a href="#contato" class="btn" aria-label="Saiba mais sobre passagens para Brasília">Saiba Mais</a>
+                    <img src="images/machu.jpg" alt="Vista das ruínas de Machu Picchu com montanhas ao fundo" loading="lazy">
+                    <h3>Machu Picchu, Peru</h3>
+                    <p>A partir de R$ 3.799</p>
+                    <a href="https://wa.me/553299938030?text=Oi,%20quero%20saber%20mais%20sobre%20Machu%20Picchu!" target="_blank" class="btn" aria-label="Saiba mais sobre Machu Picchu">Saiba Mais</a>
                 </div>
                 <div class="destino-card">
-                    <img src="https://images.pexels.com/photos/235604/pexels-photo-235604.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Rio de Janeiro, RJ">
-                    <h3>Rio de Janeiro, RJ</h3>
-                    <p>A partir de R$ 180</p>
-                    <a href="#contato" class="btn" aria-label="Saiba mais sobre passagens para Rio de Janeiro">Saiba Mais</a>
+                    <img src="images/buenos.jpg" alt="Calle Florida em Buenos Aires ao entardecer" loading="lazy">
+                    <h3>Buenos Aires, Argentina</h3>
+                    <p>A partir de R$ 2.999</p>
+                    <a href="https://wa.me/553299938030?text=Oi,%20quero%20saber%20mais%20sobre%20Buenos%20Aires!" target="_blank" class="btn" aria-label="Saiba mais sobre Buenos Aires">Saiba Mais</a>
                 </div>
                 <div class="destino-card">
-                    <img src="https://images.unsplash.com/photo-1562421478-9e6a7a7e1c7a?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Curitiba, PR">
-                    <h3>Curitiba, PR</h3>
-                    <p>A partir de R$ 280</p>
-                    <a href="#contato" class="btn" aria-label="Saiba mais sobre passagens para Curitiba">Saiba Mais</a>
+                    <img src="images/santiago.jpg" alt="Vista aérea de Santiago com os Andes ao fundo" loading="lazy">
+                    <h3>Santiago, Chile</h3>
+                    <p>A partir de R$ 3.299</p>
+                    <a href="https://wa.me/553299938030?text=Oi,%20quero%20saber%20mais%20sobre%20Santiago!" target="_blank" class="btn" aria-label="Saiba mais sobre Santiago">Saiba Mais</a>
                 </div>
                 <div class="destino-card">
-                    <img src="https://images.pixabay.com/photos/belo-horizonte-minas-gerais-brazil-3480947_1280.jpg" alt="Belo Horizonte, MG">
-                    <h3>Belo Horizonte, MG</h3>
-                    <p>A partir de R$ 290</p>
-                    <a href="#contato" class="btn" aria-label="Saiba mais sobre passagens para Belo Horizonte">Saiba Mais</a>
+                    <img src="images/bali.jpg" alt="Festival animado em Bali com multidão e luzes" loading="lazy">
+                    <h3>Bali, Indonésia</h3>
+                    <p>A partir de R$ 4.499</p>
+                    <a href="https://wa.me/553299938030?text=Oi,%20quero%20saber%20mais%20sobre%20Bali!" target="_blank" class="btn" aria-label="Saiba mais sobre Bali">Saiba Mais</a>
                 </div>
                 <div class="destino-card">
-                    <img src="https://images.pexels.com/photos/163036/recife-brazil-city-architecture-163036.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Recife, PE">
-                    <h3>Recife, PE</h3>
-                    <p>A partir de R$ 300</p>
-                    <a href="#contato" class="btn" aria-label="Saiba mais sobre passagens para Recife">Saiba Mais</a>
+                    <img src="images/toquio.jpg" alt="Rua movimentada em Tóquio à noite com luzes e movimento" loading="lazy">
+                    <h3>Tóquio, Japão</h3>
+                    <p>A partir de R$ 5.999</p>
+                    <a href="https://wa.me/553299938030?text=Oi,%20quero%20saber%20mais%20sobre%20Tóquio!" target="_blank" class="btn" aria-label="Saiba mais sobre Tóquio">Saiba Mais</a>
                 </div>
                 <div class="destino-card">
-                    <img src="https://images.unsplash.com/photo-1586985288066-5e6f5e8a6c62?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Campinas, SP">
-                    <h3>Campinas, SP</h3>
-                    <p>A partir de R$ 100</p>
-                    <a href="#contato" class="btn" aria-label="Saiba mais sobre passagens para Campinas">Saiba Mais</a>
+                    <img src="images/bancoque.jpg" alt="Templo Wat Arun em Bangkok ao pôr do sol" loading="lazy">
+                    <h3>Bangkok, Tailândia</h3>
+                    <p>A partir de R$ 4.299</p>
+                    <a href="https://wa.me/553299938030?text=Oi,%20quero%20saber%20mais%20sobre%20Bangkok!" target="_blank" class="btn" aria-label="Saiba mais sobre Bangkok">Saiba Mais</a>
                 </div>
             </div>
         </section>
 
-        <section id="sobre" class="section-card">
+        <section id="sobre" class="section-card" data-aos="fade-up">
             <h2>Sobre a F&P Viagens</h2>
             <p>A F&P Viagens é sua parceira premium para criar experiências de viagem únicas. Com anos de expertise, oferecemos passagens aéreas com preços imbatíveis, transfers personalizados e suporte 24/7 via WhatsApp, garantindo que cada momento seja memorável.</p>
-            <p><strong>Depoimentos de Clientes:</strong> "Ótimo atendimento e preços incríveis!" – Maria S.</p>
         </section>
 
-        <section id="servicos" class="section-card">
+        <section id="depoimentos" class="section-card" data-aos="fade-up">
+            <h2>Depoimentos de Clientes</h2>
+            <div class="depoimento-grid">
+                <div class="depoimento-item">
+                    <p>"Ótimo atendimento e preços incríveis!" – Maria S.</p>
+                </div>
+                <div class="depoimento-item">
+                    <p>"Recomendo a F&P Viagens para todos os meus amigos." – João P.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="servicos" class="section-card" data-aos="fade-up">
             <h2>Nossos Serviços Exclusivos</h2>
             <div class="service-grid">
                 <div class="service-item">
@@ -217,40 +263,40 @@
                     <p>Suporte personalizado via WhatsApp a qualquer hora, para resolver suas dúvidas e planejar sua viagem.</p>
                 </div>
             </div>
-            <a href="https://wa.me/553299938030?text=Oi,%20quero%20saiba%20mais%20sobre%20os%20serviços!" target="_blank" class="whatsapp-button mt-4 d-block" aria-label="Saiba mais sobre nossos serviços no WhatsApp">Saiba Mais no WhatsApp</a>
+            <a href="https://wa.me/553299938030?text=Oi,%20quero%20saber%20mais%20sobre%20os%20serviços!" target="_blank" class="whatsapp-button mt-4 d-block" aria-label="Saiba mais sobre nossos serviços no WhatsApp">Saiba Mais no WhatsApp</a>
         </section>
 
-        <section id="promocoes" class="section-card">
+        <section id="promocoes" class="section-card" data-aos="fade-up">
             <h2>Destinos em Promoção</h2>
             <div class="promo-grid">
                 <div class="promo-item">
-                    <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Foto de Paris, França">
+                    <img src="images/paris.jpg" alt="Torre Eiffel em Paris ao entardecer" loading="lazy">
                     <h3>Paris, França</h3>
                     <p>Descubra a cidade do amor com nossos pacotes exclusivos. A partir de R$ 3.999.</p>
-                    <a href="#contato" class="btn" aria-label="Saiba mais sobre a promoção para Paris">Saiba Mais</a>
+                    <a href="https://wa.me/553299938030?text=Oi,%20quero%20saber%20mais%20sobre%20a%20promoção%20para%20Paris!" target="_blank" class="btn" aria-label="Saiba mais sobre a promoção para Paris">Saiba Mais</a>
                 </div>
                 <div class="promo-item">
-                    <img src="https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Foto de Bali, Indonésia">
+                    <img src="images/bali.jpg" alt="Festival animado em Bali com multidão e luzes" loading="lazy">
                     <h3>Bali, Indonésia</h3>
                     <p>Relaxe em praias paradisíacas com promoções imperdíveis. A partir de R$ 4.499.</p>
-                    <a href="#contato" class="btn" aria-label="Saiba mais sobre a promoção para Bali">Saiba Mais</a>
+                    <a href="https://wa.me/553299938030?text=Oi,%20quero%20saber%20mais%20sobre%20a%20promoção%20para%20Bali!" target="_blank" class="btn" aria-label="Saiba mais sobre a promoção para Bali">Saiba Mais</a>
                 </div>
                 <div class="promo-item">
-                    <img src="https://images.unsplash.com/photo-1561343739-86d7a48e8e02?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Foto de Nova York, EUA">
+                    <img src="images/nova.jpg" alt="Estátua da Liberdade em Nova York com skyline de Manhattan" loading="lazy">
                     <h3>Nova York, EUA</h3>
                     <p>Explore a cidade que nunca dorme com nossos pacotes especiais. A partir de R$ 5.299.</p>
-                    <a href="#contato" class="btn" aria-label="Saiba mais sobre a promoção para Nova York">Saiba Mais</a>
+                    <a href="https://wa.me/553299938030?text=Oi,%20quero%20saber%20mais%20sobre%20a%20promoção%20para%20Nova%20York!" target="_blank" class="btn" aria-label="Saiba mais sobre a promoção para Nova York">Saiba Mais</a>
                 </div>
                 <div class="promo-item">
-                    <img src="https://images.pixabay.com/photos/machu-picchu-peru-mountain-landscape-40039_1280.jpg" alt="Foto de Machu Picchu, Peru">
+                    <img src="images/machu.jpg" alt="Vista das ruínas de Machu Picchu com montanhas ao fundo" loading="lazy">
                     <h3>Machu Picchu, Peru</h3>
                     <p>Aventure-se em uma das maravilhas do mundo com descontos exclusivos. A partir de R$ 3.799.</p>
-                    <a href="#contato" class="btn" aria-label="Saiba mais sobre a promoção para Machu Picchu">Saiba Mais</a>
+                    <a href="https://wa.me/553299938030?text=Oi,%20quero%20saber%20mais%20sobre%20a%20promoção%20para%20Machu%20Picchu!" target="_blank" class="btn" aria-label="Saiba mais sobre a promoção para Machu Picchu">Saiba Mais</a>
                 </div>
             </div>
         </section>
 
-        <section id="contato" class="section-card">
+        <section id="contato" class="section-card" data-aos="fade-up">
             <h2>Entre em Contato</h2>
             <p>Quer planejar sua próxima aventura? Clique abaixo e fale comigo no WhatsApp para cotações e dúvidas!</p>
             <a href="https://wa.me/553299938030?text=Oi,%20tenho%20uma%20dúvida%20sobre%20as%20promoções!" target="_blank" class="whatsapp-button" aria-label="Fale comigo no WhatsApp para dúvidas sobre promoções">Fale comigo no WhatsApp</a>
@@ -263,12 +309,17 @@
             <a href="https://x.com/fepviagens" target="_blank" aria-label="Perfil no X"><i class="fab fa-x-twitter"></i></a>
             <a href="https://instagram.com/fepviagens" target="_blank" aria-label="Perfil no Instagram"><i class="fab fa-instagram"></i></a>
             <a href="https://facebook.com/fepviagens" target="_blank" aria-label="Perfil no Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://linkedin.com/company/fepviagens" target="_blank" aria-label="Perfil no LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://tiktok.com/@fepviagens" target="_blank" aria-label="Perfil no TikTok"><i class="fab fa-tiktok"></i></a>
         </div>
         <a href="https://wa.me/553299938030?text=Oi,%20quero%20falar%20com%20a%20F&P%20Viagens!" target="_blank" class="whatsapp-float" aria-label="Fale comigo no WhatsApp">
             <i class="fab fa-whatsapp"></i>
         </a>
     </footer>
 
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init();</script>
     <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js"></script>
@@ -276,6 +327,20 @@
         // Menu hamburguer
         document.querySelector('.hamburger').addEventListener('click', () => {
             document.querySelector('.nav-menu').classList.toggle('active');
+        });
+
+        // Formulário de contato (removido, mas mantendo o script por segurança, embora não seja mais utilizado)
+        $(document).ready(function() {
+            // Este script não será mais necessário, mas mantido por precaução
+            $('#contact-form').ajaxForm({
+                success: function() {
+                    alert('Mensagem enviada com sucesso!');
+                    $('#contact-form')[0].reset();
+                },
+                error: function() {
+                    alert('Erro ao enviar mensagem. Tente novamente.');
+                }
+            });
         });
     </script>
 </body>
