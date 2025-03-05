@@ -14,19 +14,18 @@ function changeVideo() {
     setTimeout(changeVideo, 10000); // Troca a cada 10 segundos
 }
 
-// Tenta carregar vídeos localmente com fallback para links externos
+// Tenta carregar vídeos com fallback para links do Google Drive
 videos[currentVideo].style.display = 'block';
 setTimeout(() => {
     const firstVideo = videos[currentVideo];
     if (firstVideo.error || !firstVideo.readyState) {
-        // Substitua pelos links reais dos vídeos hospedados (ex.: Google Drive, Dropbox)
+        // Links diretos dos vídeos no Google Drive (substituímos os placeholders pelos seus links)
         const videoLinks = [
-            "https://example.com/videos/beach.mp4",
-            "https://example.com/videos/mountains.mp4",
-            "https://example.com/videos/city.mp4",
-            "https://example.com/videos/airplane.mp4",
-            "https://example.com/videos/ocean.mp4",
-            "https://example.com/videos/forest.mp4"
+            "https://drive.google.com/uc?export=download&id=1RYxh3px2GpxCuVk3N7fxxlu61Ew2xpr4",
+            "https://drive.google.com/uc?export=download&id=11zQqbiVevRNvSULepV8UTPmIG1l7WfbS",
+            "https://drive.google.com/uc?export=download&id=1OAtmSsLNLUFNdobQt5GZNLHGeKl-ks42",
+            "https://drive.google.com/uc?export=download&id=1gb-244zRHAk0ATpb-cpqZ08sjVgfFY7m",
+            "https://drive.google.com/uc?export=download&id=1nSqRpKNwoHeyYevOEtel4bNsiYpHC-OT"
         ];
         videos.forEach((video, index) => {
             video.querySelector('source').src = videoLinks[index];
