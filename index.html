@@ -6,8 +6,14 @@
     <title>F&P Viagens - Experiências Inesquecíveis com Preços Baixos</title>
     <meta name="description" content="Descubra passagens com preços baixos para viagens nacionais e internacionais na F&P Viagens. Voos, transfers e atendimento 24/7 via WhatsApp.">
     <meta name="keywords" content="passagens baratas, viagens nacionais, viagens internacionais, agência de viagens, voos, transfers">
+    <meta name="author" content="F&P Viagens">
+    <meta property="og:title" content="F&P Viagens - Experiências Inesquecíveis">
+    <meta property="og:description" content="Planeje sua próxima viagem com preços acessíveis e atendimento premium pelo WhatsApp.">
+    <meta property="og:image" content="images/fep-viagens-logo.png">
+    <meta property="og:url" content="https://midgardo17.github.io/fpviagens">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header class="header">
@@ -31,8 +37,8 @@
 
     <main>
         <section id="home" class="hero">
-            <video autoplay muted loop class="hero-video-background" playsinline>
-                <source src="https://drive.google.com/uc?export=download&id=1Wi3SH7lVRhfU5Hzp9f3Lq6YwBqPVPWxR" type="video/mp4">
+            <video autoplay muted loop class="hero-video" playsinline>
+                <source src="videos/video01.mp4" type="video/mp4">
                 Seu navegador não suporta vídeos.
             </video>
             <div class="hero-content">
@@ -47,39 +53,77 @@
         <section id="sobre" class="section-card">
             <h2>Sobre a F&P Viagens</h2>
             <p>A F&P Viagens é sua parceira premium para criar experiências de viagem únicas. Com anos de expertise, oferecemos passagens aéreas com preços imbatíveis, transfers personalizados e suporte 24/7 via WhatsApp, garantindo que cada momento seja memorável.</p>
+            <p><strong>Depoimentos de Clientes:</strong> "Ótimo atendimento e preços incríveis!" – Maria S.</p>
         </section>
 
         <section id="servicos" class="section-card">
             <h2>Nossos Serviços Exclusivos</h2>
             <div class="service-grid">
                 <div class="service-item">
-                    <h3>Passagens Aéreas</h3>
+                    <h3><i class="fas fa-plane"></i> Passagens Aéreas</h3>
                     <p>Voos nacionais e internacionais com tarifas competitivas e opções flexíveis para sua conveniência.</p>
                 </div>
                 <div class="service-item">
-                    <h3>Transfers Personalizados</h3>
+                    <h3><i class="fas fa-car"></i> Transfers Personalizados</h3>
                     <p>Traslados seguros, confortáveis e pontuais para o seu destino, com atendimento sob medida.</p>
                 </div>
                 <div class="service-item">
-                    <h3>Atendimento 24/7</h3>
+                    <h3><i class="fas fa-headset"></i> Atendimento 24/7</h3>
                     <p>Suporte personalizado via WhatsApp a qualquer hora, para resolver suas dúvidas e planejar sua viagem.</p>
                 </div>
             </div>
+            <a href="https://wa.me/553299938030?text=Oi,%20quero%20saiba%20mais%20sobre%20os%20serviços!" target="_blank" class="whatsapp-button mt-4 d-block">Saiba Mais no WhatsApp</a>
         </section>
 
         <section id="contato" class="section-card">
             <h2>Entre em Contato</h2>
-            <p>Quer planejar sua próxima aventura? Clique abaixo e fale comigo no WhatsApp para cotações e dúvidas!</p>
-            <a href="https://wa.me/553299938030?text=Oi,%20tenho%20uma%20dúvida%20sobre%20viagens!" target="_blank" class="whatsapp-button">
+            <p>Quer planejar sua próxima aventura? Clique abaixo ou preencha o formulário para cotações e dúvidas!</p>
+            <a href="https://wa.me/553299938030?text=Oi,%20tenho%20uma%20dúvida%20sobre%20viagens!" target="_blank" class="whatsapp-button mb-3">
                 Fale comigo no WhatsApp
             </a>
+            <form id="contact-form" class="mt-3">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Seu Nome" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Seu E-mail" required>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" placeholder="Sua Mensagem" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+            </form>
         </section>
     </main>
 
     <footer class="footer">
         <p>© 2025 F&P Viagens. Todos os direitos reservados.</p>
+        <div class="social-links">
+            <a href="https://x.com/fepviagens" target="_blank" aria-label="Perfil no X"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://instagram.com/fepviagens" target="_blank" aria-label="Perfil no Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://facebook.com/fepviagens" target="_blank" aria-label="Perfil no Facebook"><i class="fab fa-facebook"></i></a>
+        </div>
+        <a href="https://wa.me/553299938030?text=Oi,%20quero%20falar%20com%20a%20F&P%20Viagens!" target="_blank" class="whatsapp-float">
+            <i class="fab fa-whatsapp"></i>
+        </a>
     </footer>
 
     <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js"></script>
 </body>
 </html>
+
+<section id="home" class="hero">
+    <video autoplay muted loop class="hero-video" playsinline>
+        <source src="https://drive.google.com/uc?export=download&id=1Wi3SH7lVRhfU5Hzp9f3Lq6YwBqPVPWxR" type="video/mp4">
+        Seu navegador não suporta vídeos.
+    </video>
+    <div class="hero-content">
+        <h1>Descubra Viagens Inesquecíveis</h1>
+        <p>Preços baixos para nacionais e internacionais – fale comigo no WhatsApp!</p>
+        <a href="https://wa.me/553299938030?text=Oi,%20quero%20uma%20cotação%20de%20viagem%20top!" target="_blank" class="whatsapp-button">
+            Fale comigo no WhatsApp
+        </a>
+    </div>
+</section>
