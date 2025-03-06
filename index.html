@@ -3,174 +3,501 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>F&P Viagens - Promoções Exclusivas</title>
-    <meta name="description" content="Aproveite promoções exclusivas para destinos incríveis com a F&P Viagens – passagens baratas, atendimento premium via WhatsApp e serviços para viajar com seu pet.">
-    <meta name="keywords" content="promoções de viagens, passagens baratas, viagens nacionais, viagens internacionais, agência de viagens, Machu Picchu, Paris, Bali, Nova York, viajar com pet">
+    <title>F&P Viagens - Promoções Exclusivas e Inesquecíveis</title>
+    <meta name="description" content="Aproveite promoções exclusivas para destinos incríveis com a F&P Viagens – passagens aéreas acessíveis, atendimento premium via WhatsApp e serviços para viajar com seu pet.">
+    <meta name="keywords" content="promoções de viagens, passagens baratas, viagens nacionais, internacionais, agência de viagens, Machu Picchu, Paris, Bali, Nova York, viajar com pet">
     <meta name="author" content="F&P Viagens">
     <!-- Open Graph Meta Tags para compartilhamento social -->
-    <meta property="og:title" content="F&P Viagens - Promoções Exclusivas">
-    <meta property="og:description" content="Passagens com preço baixo para viagens nacionais e internacionais, incluindo serviços para viajar com seu pet. Você curte sua viagem, a gente se preocupa com o resto!">
-    <meta property="og:image" content="images/fep-viagens-logo.png">
+    <meta property="og:title" content="F&P Viagens - Promoções Exclusivas e Inesquecíveis">
+    <meta property="og:description" content="Passagens com preço baixo para viagens nacionais e internacionais, incluindo serviços para viajar com seu pet. Você curte sua viagem, a gente cuida do resto!">
+    <meta property="og:image" content="https://midgardo17.github.io/fpviagens/images/fep-viagens-logo.png">
+    <meta property="og:image:alt" content="Logo da F&P Viagens com globo azul e avião branco">
     <meta property="og:url" content="https://midgardo17.github.io/fpviagens">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="F&P Viagens">
-    <!-- Links de Estilo -->
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Links de Estilo e Bibliotecas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Open+Sans:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
     <!-- Structured Data para SEO -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "TravelAgency",
-      "name": "F&P Viagens",
-      "url": "https://midgardo17.github.io/fpviagens",
-      "logo": "https://midgardo17.github.io/fpviagens/images/fep-viagens-logo.png",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+55-32-99938-030",
-        "contactType": "Customer Service"
-      },
-      "sameAs": [
-        "https://instagram.com/fepviagens",
-        "https://facebook.com/fepviagens",
-        "https://x.com/fepviagens",
-        "https://linkedin.com/company/fepviagens",
-        "https://tiktok.com/@fepviagens"
-      ]
+        "@context": "https://schema.org",
+        "@type": "TravelAgency",
+        "name": "F&P Viagens",
+        "url": "https://midgardo17.github.io/fpviagens",
+        "logo": "https://midgardo17.github.io/fpviagens/images/fep-viagens-logo.png",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+55-32-99938-030",
+            "contactType": "Customer Service",
+            "availableLanguage": ["Portuguese", "English", "Spanish"]
+        },
+        "sameAs": [
+            "https://instagram.com/fepviagens",
+            "https://facebook.com/fepviagens",
+            "https://x.com/fepviagens",
+            "https://linkedin.com/company/fepviagens",
+            "https://tiktok.com/@fepviagens"
+        ],
+        "offers": [
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Pacote para Machu Picchu"
+                },
+                "price": "3799.00",
+                "priceCurrency": "BRL",
+                "availability": "InStock",
+                "url": "https://wa.me/553299938030?text=Oi,%20quero%20saber%20mais%20sobre%20Machu%20Picchu!"
+            }
+        ]
     }
     </script>
     <style>
-        /* Animações para a seção hero */
+        /* === Reset e Estilos Globais === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f4f4f4;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* === Animações === */
         @keyframes fadeInDown {
             from { opacity: 0; transform: translateY(-20px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        .hero-content h1 { animation: fadeInDown 1s ease-out; }
-        .hero-content p { animation: fadeInUp 1s ease-out 0.5s; }
-        .hero-content .whatsapp-button { animation: fadeInUp 1s ease-out 1s; }
 
-        /* Estilos gerais */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Montserrat', sans-serif; background-color: #f4f4f4; line-height: 1.6; scroll-behavior: smooth; }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
 
-        /* Cabeçalho */
-        .header { background-color: #007BFF; padding: 20px; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); }
-        .navbar { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-        .logo-img { height: 50px; filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.1)); }
-        .nav-menu { list-style: none; display: flex; gap: 2rem; }
-        .nav-link { color: white; text-decoration: none; font-size: 1.1rem; font-weight: 500; transition: color 0.3s ease; }
-        .nav-link:hover { color: #28A745; }
-        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-        .hamburger span { width: 25px; height: 3px; background-color: white; transition: all 0.3s ease; }
-
-        /* Seção Hero */
-        .hero { position: relative; height: 80vh; overflow: hidden; margin-top: 80px; background-image: url('images/travel-backround.jpg'); background-size: cover; background-position: center; }
-        .hero-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
-        .hero-content { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2; text-align: center; color: white; padding: 2rem; background: rgba(0, 0, 0, 0.5); border-radius: 12px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); }
-        .hero-content h1 { font-size: 3rem; margin-bottom: 1rem; font-weight: 700; text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); }
-        .hero-content p { font-size: 1.5rem; margin-bottom: 2rem; opacity: 0.9; }
-        .whatsapp-button { display: inline-block; padding: 1.2rem 2.5rem; background: #25D366; color: white; text-decoration: none; border-radius: 25px; font-size: 1.2rem; font-weight: bold; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5); transition: all 0.3s ease; }
-        .whatsapp-button:hover { background: #1EBE57; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37, 211, 102, 0.7); }
-
-        /* Destinos Baratos */
-        .destinos-baratos { padding: 60px 20px; text-align: center; background-color: #fff; }
-        .destinos-baratos h2 { font-size: 36px; margin-bottom: 40px; color: #007bff; font-weight: 700; }
-        .destino-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
-        .destino-card { background: #f9f9f9; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); overflow: hidden; transition: transform 0.3s ease; }
-        .destino-card:hover { transform: translateY(-10px); }
-        .destino-card img { width: 100%; height: 200px; object-fit: cover; }
-        .destino-card h3 { font-size: 24px; margin: 15px 0; color: #007bff; }
-        .destino-card p { font-size: 18px; color: #444; margin-bottom: 15px; }
-        .btn { display: inline-block; background: #25D366; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-size: 16px; transition: background 0.3s; }
-        .btn:hover { background: #1EBE57; }
-
-        /* Seções Gerais */
-        .section-card { max-width: 800px; margin: 4rem auto; padding: 2rem; background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); text-align: center; }
-        .section-card h2 { color: #007bff; font-size: 2.5rem; margin-bottom: 1.5rem; }
-        .section-card p { font-size: 1.1rem; color: #444; line-height: 1.8; }
-        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
-        .service-item { padding: 1.5rem; background: #fff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease; }
-        .service-item:hover { transform: translateY(-5px); }
-        .service-item h3 { color: #007bff; font-size: 1.5rem; margin-bottom: 1rem; }
-        .service-item i { margin-right: 10px; color: #007bff; font-size: 1.5rem; }
+        /* === Utilitários === */
         .mt-4 { margin-top: 2rem; }
         .d-block { display: block; }
 
-        /* Depoimentos */
-        .depoimento-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
-        .depoimento-item { padding: 1.5rem; background: #f9f9f9; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); text-align: center; }
-
-        /* Promoções */
-        .promo-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 20px; }
-        .promo-item { background: white; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); overflow: hidden; transition: transform 0.3s ease; }
-        .promo-item:hover { transform: translateY(-5px); }
-        .promo-item img { width: 100%; height: 200px; object-fit: cover; }
-        .promo-item h3 { padding: 10px; font-size: 1.5rem; color: #007bff; }
-        .promo-item p { padding: 0 10px 10px; font-size: 1rem; color: #444; }
-        .promo-item .btn { display: block; margin: 10px; padding: 10px; background: #25D366; color: white; text-align: center; text-decoration: none; border-radius: 5px; }
-
-        /* Contato */
-        #contact-form { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
-        #contact-form input, #contact-form textarea { padding: 1rem; border: 1px solid #ccc; border-radius: 5px; font-size: 1rem; }
-        #contact-form button { background: #25D366; color: white; padding: 1rem; border: none; border-radius: 5px; cursor: pointer; transition: background 0.3s; }
-        #contact-form button:hover { background: #1EBE57; }
-
-        /* Rodapé */
-        .footer { background: #007bff; color: white; text-align: center; padding: 1.5rem; margin-top: 3rem; }
-        .social-links { margin-top: 10px; }
-        .social-links a { color: white; margin: 0 10px; font-size: 1.2rem; transition: color 0.3s; }
-        .social-links a:hover { color: #28A745; }
-        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25D366; color: white; border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5); transition: background 0.3s; }
-        .whatsapp-float:hover { background: #1EBE57; }
-
-        /* Responsividade */
-        @media (max-width: 768px) {
-            .hamburger { display: flex; }
-            .nav-menu { display: none; flex-direction: column; position: absolute; top: 60px; left: 0; width: 100%; background: #007bff; padding: 1rem; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); }
-            .nav-menu.active { display: flex; }
-            .nav-link { padding: 1rem; font-size: 1rem; }
-            .hero { height: 70vh; margin-top: 50px; }
-            .hero-content { padding: 1.5rem; }
-            .hero-content h1 { font-size: 2rem; }
-            .hero-content p { font-size: 1.2rem; }
-            .whatsapp-button { padding: 1rem 2rem; font-size: 1rem; }
-            .destinos-baratos h2 { font-size: 28px; }
-            .destino-card h3 { font-size: 20px; }
-            .destino-card p { font-size: 16px; }
-            .btn { padding: 8px 15px; font-size: 14px; }
-            .section-card { margin: 3rem auto; padding: 1.5rem; }
-            .section-card h2 { font-size: 2rem; }
-            .service-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
-            .promo-grid { grid-template-columns: repeat(2, 1fr); }
-            .whatsapp-float { width: 40px; height: 40px; bottom: 10px; right: 10px; }
+        /* === Botões === */
+        .btn, .whatsapp-button {
+            display: inline-block;
+            padding: clamp(0.8rem, 2vw, 1.2rem) clamp(1.5rem, 3vw, 2.5rem);
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: clamp(0.9rem, 2vw, 1.2rem);
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5);
+            transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
         }
+
+        .btn:hover, .whatsapp-button:hover,
+        .btn:focus, .whatsapp-button:focus {
+            background: #1EBE57;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(30, 190, 87, 0.7);
+            outline: 2px solid #1EBE57;
+            outline-offset: 2px;
+        }
+
+        .btn:active, .whatsapp-button:active {
+            transform: scale(0.95);
+            transition: transform 0.1s ease;
+        }
+
+        /* === Cabeçalho === */
+        .header {
+            background-color: #007BFF;
+            padding: clamp(15px, 2vw, 20px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: clamp(40px, 5vw, 50px);
+            filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.1));
+            transition: transform 0.3s ease;
+        }
+
+        .logo-img:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            gap: clamp(1rem, 2vw, 2rem);
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+            font-weight: 500;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        .nav-link:hover, .nav-link:focus {
+            color: #28A745;
+            transform: translateY(-2px);
+            outline: 2px solid #28A745;
+            outline-offset: 2px;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: clamp(4px, 1vw, 5px);
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .hamburger:hover span {
+            background-color: #28A745;
+        }
+
+        /* === Seção Hero === */
+        .hero {
+            position: relative;
+            min-height: 80vh;
+            max-height: 100vh;
+            overflow: hidden;
+            margin-top: clamp(60px, 8vw, 80px);
+            background-image: url('images/travel-background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            text-align: center;
+            color: white;
+            padding: clamp(1.5rem, 3vw, 2rem);
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: clamp(1rem, 2vw, 1rem);
+            font-weight: 700;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .hero-content p {
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            margin-bottom: clamp(1.5rem, 3vw, 2rem);
+            opacity: 0.9;
+            font-family: 'Open Sans', sans-serif;
+            animation: fadeInUp 1s ease-out 0.5s;
+        }
+
+        .hero-content .whatsapp-button {
+            animation: fadeInUp 1s ease-out 1s;
+        }
+
+        /* === Cards de Destinos e Promoções === */
+        .destinos-baratos, .section-card {
+            padding: clamp(40px, 5vw, 60px) clamp(10px, 2vw, 20px);
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .destinos-baratos h2, .section-card h2 {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            margin-bottom: clamp(30px, 4vw, 40px);
+            color: #007bff;
+            font-weight: 700;
+        }
+
+        .destino-grid, .promo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(clamp(200px, 25vw, 300px), 1fr));
+            gap: clamp(20px, 3vw, 30px);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .destino-card, .promo-item {
+            background: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .destino-card:hover, .promo-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .destino-card img, .promo-item img {
+            width: 100%;
+            height: clamp(150px, 20vw, 200px);
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+
+        .destino-card img:hover, .promo-item img:hover {
+            opacity: 0.9;
+        }
+
+        .destino-card h3, .promo-item h3 {
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            margin: clamp(10px, 2vw, 15px) 0;
+            color: #007bff;
+            padding: 0 clamp(10px, 2vw, 15px);
+        }
+
+        .destino-card p, .promo-item p {
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            color: #444;
+            margin-bottom: clamp(10px, 2vw, 15px);
+            padding: 0 clamp(10px, 2vw, 15px);
+        }
+
+        .promo-item .btn {
+            margin: clamp(10px, 2vw, 15px);
+        }
+
+        /* === Seções de Serviços e Depoimentos === */
+        .section-card {
+            max-width: clamp(600px, 80vw, 800px);
+            margin: clamp(3rem, 5vw, 4rem) auto;
+            padding: clamp(1.5rem, 3vw, 2rem);
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-grid, .depoimento-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(clamp(250px, 30vw, 300px), 1fr));
+            gap: clamp(1.5rem, 2vw, 2rem);
+            margin-top: clamp(1.5rem, 2vw, 2rem);
+        }
+
+        .service-item, .depoimento-item {
+            padding: clamp(1rem, 2vw, 1.5rem);
+            background: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-item:hover, .depoimento-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-item h3 {
+            color: #007bff;
+            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+            margin-bottom: clamp(0.8rem, 1.5vw, 1rem);
+        }
+
+        .service-item i {
+            margin-right: clamp(8px, 1.5vw, 10px);
+            color: #007bff;
+            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+        }
+
+        .depoimento-item p {
+            font-style: italic;
+            color: #333;
+        }
+
+        /* === Contato === */
+        #contato {
+            padding-bottom: clamp(2rem, 3vw, 3rem);
+        }
+
+        /* === Rodapé === */
+        .footer {
+            background: #007bff;
+            color: white;
+            text-align: center;
+            padding: clamp(1rem, 2vw, 1.5rem);
+            margin-top: clamp(2rem, 3vw, 3rem);
+        }
+
+        .social-links {
+            margin-top: clamp(8px, 1.5vw, 10px);
+        }
+
+        .social-links a {
+            color: white;
+            margin: clamp(5px, 1vw, 10px);
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-links a:hover, .social-links a:focus {
+            color: #28A745;
+            transform: scale(1.2);
+            outline: 2px solid #28A745;
+            outline-offset: 2px;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: clamp(15px, 2vw, 20px);
+            right: clamp(15px, 2vw, 20px);
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            width: clamp(40px, 5vw, 50px);
+            height: clamp(40px, 5vw, 50px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5);
+            transition: background 0.3s ease, transform 0.3s ease;
+            animation: pulse 2s infinite;
+            z-index: 1001;
+        }
+
+        .whatsapp-float:hover, .whatsapp-float:focus {
+            background: #1EBE57;
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(30, 190, 87, 0.7);
+            outline: 2px solid #1EBE57;
+            outline-offset: 2px;
+        }
+
+        .whatsapp-float:active {
+            transform: scale(0.95);
+            transition: transform 0.1s ease;
+        }
+
+        /* === Responsividade === */
+        @media (max-width: 1024px) {
+            .hamburger { display: flex; }
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: clamp(50px, 7vw, 60px);
+                left: 0;
+                width: 100%;
+                background: #007bff;
+                padding: clamp(1rem, 2vw, 1.5rem);
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+                transition: transform 0.3s ease-in-out;
+                transform: translateY(-100%);
+            }
+            .nav-menu.active { transform: translateY(0); }
+            .nav-link { padding: clamp(0.8rem, 1.5vw, 1rem); font-size: clamp(0.9rem, 1.5vw, 1rem); text-align: center; }
+            .hero { margin-top: clamp(50px, 7vw, 60px); }
+            .destino-grid, .promo-grid, .service-grid, .depoimento-grid {
+                grid-template-columns: repeat(auto-fit, minmax(clamp(200px, 25vw, 250px), 1fr));
+                gap: clamp(15px, 2vw, 20px);
+            }
+            .section-card { margin: clamp(2.5rem, 4vw, 3rem) auto; padding: clamp(1.2rem, 2.5vw, 1.5rem); }
+        }
+
+        @media (max-width: 768px) {
+            .hero { height: clamp(60vh, 70vw, 70vh); }
+            .hero-content h1 { font-size: clamp(1.8rem, 4vw, 2.5rem); }
+            .hero-content p { font-size: clamp(1rem, 2.5vw, 1.5rem); }
+            .whatsapp-button { padding: clamp(0.8rem, 2vw, 1rem) clamp(1.5rem, 3vw, 2rem); font-size: clamp(0.9rem, 2vw, 1rem); }
+            .destinos-baratos h2, .section-card h2 { font-size: clamp(1.8rem, 3.5vw, 2rem); }
+            .destino-card h3, .promo-item h3 { font-size: clamp(1rem, 2.5vw, 1.2rem); }
+            .destino-card p, .promo-item p { font-size: clamp(0.8rem, 1.8vw, 1rem); }
+            .btn { padding: clamp(8px, 1.5vw, 10px) clamp(12px, 2.5vw, 15px); font-size: clamp(0.8rem, 1.5vw, 1rem); }
+            .section-card p { font-size: clamp(0.9rem, 1.8vw, 1rem); }
+            .promo-grid, .service-grid { grid-template-columns: repeat(auto-fit, minmax(clamp(200px, 25vw, 250px), 1fr)); }
+            .whatsapp-float { width: clamp(35px, 4vw, 40px); height: clamp(35px, 4vw, 40px); }
+        }
+
         @media (max-width: 480px) {
-            .promo-grid { grid-template-columns: 1fr; }
-            .service-grid { grid-template-columns: 1fr; }
+            .hero { height: clamp(50vh, 60vw, 60vh); margin-top: clamp(40px, 6vw, 50px); }
+            .hero-content { padding: clamp(1rem, 2vw, 1.5rem); border-radius: 8px; }
+            .hero-content h1 { font-size: clamp(1.5rem, 4vw, 2rem); }
+            .hero-content p { font-size: clamp(0.9rem, 2vw, 1.2rem); }
+            .whatsapp-button { padding: clamp(0.6rem, 1.5vw, 0.8rem) clamp(1rem, 2.5vw, 1.5rem); font-size: clamp(0.8rem, 1.8vw, 1rem); }
+            .destino-grid, .promo-grid, .service-grid, .depoimento-grid { grid-template-columns: 1fr; gap: clamp(10px, 1.5vw, 15px); }
+            .destino-card img, .promo-item img { height: clamp(120px, 15vw, 150px); }
+            .btn { padding: clamp(6px, 1.2vw, 8px) clamp(10px, 2vw, 12px); font-size: clamp(0.7rem, 1.5vw, 0.9rem); }
+            .section-card { margin: clamp(2rem, 4vw, 2.5rem) auto; padding: clamp(1rem, 2vw, 1.2rem); border-radius: 10px; }
+            .section-card h2 { font-size: clamp(1.5rem, 3vw, 1.8rem); }
+            .section-card p { font-size: clamp(0.8rem, 1.5vw, 0.9rem); }
+            .whatsapp-float { width: clamp(30px, 3.5vw, 35px); height: clamp(30px, 3.5vw, 35px); bottom: clamp(5px, 1.5vw, 10px); right: clamp(5px, 1.5vw, 10px); }
         }
     </style>
 </head>
 <body>
-    <header class="header">
+    <!-- Cabeçalho com Navegação -->
+    <header class="header" data-aos="fade-down">
         <nav class="navbar">
             <div class="logo">
-                <img src="images/fep-viagens-logo.png" alt="Logo da F&P Viagens com globo e avião" class="logo-img" loading="lazy">
+                <img src="images/fep-viagens-logo.png" alt="Logo da F&P Viagens com um globo azul e um avião branco circundando-o" class="logo-img" loading="lazy">
             </div>
             <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#sobre" class="nav-link">Sobre</a></li>
-                <li><a href="#depoimentos" class="nav-link">Depoimentos</a></li>
-                <li><a href="#servicos" class="nav-link">Serviços</a></li>
-                <li><a href="#promocoes" class="nav-link">Promoções</a></li>
-                <li><a href="#contato" class="nav-link">Contato</a></li>
+                <li><a href="#home" class="nav-link" aria-label="Ir para a seção Home">Home</a></li>
+                <li><a href="#sobre" class="nav-link" aria-label="Ir para a seção Sobre">Sobre</a></li>
+                <li><a href="#depoimentos" class="nav-link" aria-label="Ir para a seção Depoimentos">Depoimentos</a></li>
+                <li><a href="#servicos" class="nav-link" aria-label="Ir para a seção Serviços">Serviços</a></li>
+                <li><a href="#promocoes" class="nav-link" aria-label="Ir para a seção Promoções">Promoções</a></li>
+                <li><a href="#contato" class="nav-link" aria-label="Ir para a seção Contato">Contato</a></li>
             </ul>
-            <div class="hamburger">
+            <div class="hamburger" aria-label="Abrir menu de navegação">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -178,175 +505,181 @@
         </nav>
     </header>
 
+    <!-- Conteúdo Principal -->
     <main>
+        <!-- Seção Hero -->
         <section id="home" class="hero" data-aos="fade-up">
-            <video autoplay muted loop class="hero-video" playsinline loading="lazy">
-                <source src="videos/video01.mp4" type="video/mp4">
+            <video class="hero-video" autoplay muted loop playsinline poster="images/travel-background.jpg" loading="lazy">
+                <source src="videos/video01.mp4" type="video/mp4" media="(min-width: 769px)">
                 Seu navegador não suporta vídeos.
             </video>
             <div class="hero-content">
                 <h1>Descubra Viagens Inesquecíveis</h1>
-                <p>Preços baixos para nacionais e internacionais – aproveite nossas promoções!</p>
+                <p>Preços baixos para destinos nacionais e internacionais – aproveite nossas promoções exclusivas!</p>
                 <a href="https://wa.me/553299938030?text=Oi,%20quero%20aproveitar%20as%20promoções!" target="_blank" class="whatsapp-button" aria-label="Fale comigo no WhatsApp para promoções de viagem">Fale comigo no WhatsApp</a>
             </div>
         </section>
 
+        <!-- Seção Promoções -->
         <section id="promocoes" class="section-card" data-aos="fade-up">
             <h2>Destinos em Promoção</h2>
             <div class="promo-grid">
-                <div class="promo-item">
-                    <img src="images/paris.jpg" alt="Torre Eiffel em Paris ao entardecer" loading="lazy">
+                <article class="promo-item" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="images/paris.jpg" alt="Torre Eiffel em Paris ao entardecer com luzes suaves" loading="lazy">
                     <h3>Paris, França</h3>
                     <p>Descubra a cidade do amor com nossos pacotes exclusivos. A partir de R$ 3.999.</p>
-                    <a href="https://wa.me/553299938030?text=Oi,%20quero%20saber%20mais%20sobre%20a%20promoção%20para%20Paris!" target="_blank" class="btn" aria-label="Saiba mais sobre a promoção para Paris">Saiba Mais</a>
-                </div>
-                <div class="promo-item">
-                    <img src="images/bali.jpg" alt="Festival animado em Bali com multidão e luzes" loading="lazy">
+                    <a href="https://wa.me/553299938030?text=Oi,%20quero%20saber%20mais%20sobre%20a%20promoção%20para%20Paris!" target="_blank" class="btn" aria-label="Saiba mais sobre a promoção para Paris no WhatsApp">Saiba Mais</a>
+                </article>
+                <article class="promo-item" data-aos="zoom-in" data-aos-delay="400">
+                    <img src="images/bali.jpg" alt="Festival animado em Bali com multidão e luzes vibrantes ao pôr do sol" loading="lazy">
                     <h3>Bali, Indonésia</h3>
                     <p>Relaxe em praias paradisíacas com promoções imperdíveis. A partir de R$ 4.499.</p>
-                    <a href="https://wa.me/553299938030?text=Oi,%20quero%20saber%20mais%20sobre%20a%20promoção%20para%20Bali!" target="_blank" class="btn" aria-label="Saiba mais sobre a promoção para Bali">Saiba Mais</a>
-                </div>
-                <div class="promo-item">
-                    <img src="images/nova.jpg" alt="Estátua da Liberdade em Nova York com skyline de Manhattan" loading="lazy">
+                    <a href="https://wa.me/553299938030?text=Oi,%20quero%20saber%20mais%20sobre%20a%20promoção%20para%20Bali!" target="_blank" class="btn" aria-label="Saiba mais sobre a promoção para Bali no WhatsApp">Saiba Mais</a>
+                </article>
+                <article class="promo-item" data-aos="zoom-in" data-aos-delay="600">
+                    <img src="images/nova.jpg" alt="Estátua da Liberdade em Nova York com o skyline de Manhattan ao fundo" loading="lazy">
                     <h3>Nova York, EUA</h3>
                     <p>Explore a cidade que nunca dorme com nossos pacotes especiais. A partir de R$ 5.299.</p>
-                    <a href="https://wa.me/553299938030?text=Oi,%20quero%20saber%20mais%20sobre%20a%20promoção%20para%20Nova%20York!" target="_blank" class="btn" aria-label="Saiba mais sobre a promoção para Nova York">Saiba Mais</a>
-                </div>
-                <div class="promo-item">
-                    <img src="images/machu.jpg" alt="Vista das ruínas de Machu Picchu com montanhas ao fundo" loading="lazy">
+                    <a href="https://wa.me/553299938030?text=Oi,%20quero%20saber%20mais%20sobre%20a%20promoção%20para%20Nova%20York!" target="_blank" class="btn" aria-label="Saiba mais sobre a promoção para Nova York no WhatsApp">Saiba Mais</a>
+                </article>
+                <article class="promo-item" data-aos="zoom-in" data-aos-delay="800">
+                    <img src="images/machu.jpg" alt="Vista das ruínas de Machu Picchu com montanhas ao fundo sob um céu claro" loading="lazy">
                     <h3>Machu Picchu, Peru</h3>
                     <p>Aventure-se em uma das maravilhas do mundo com descontos exclusivos. A partir de R$ 3.799.</p>
-                    <a href="https://wa.me/553299938030?text=Oi,%20quero%20saber%20mais%20sobre%20a%20promoção%20para%20Machu%20Picchu!" target="_blank" class="btn" aria-label="Saiba mais sobre a promoção para Machu Picchu">Saiba Mais</a>
-                </div>
+                    <a href="https://wa.me/553299938030?text=Oi,%20quero%20saber%20mais%20sobre%20a%20promoção%20para%20Machu%20Picchu!" target="_blank" class="btn" aria-label="Saiba mais sobre a promoção para Machu Picchu no WhatsApp">Saiba Mais</a>
+                </article>
             </div>
         </section>
 
+        <!-- Seção Destinos Internacionais -->
         <section id="destinos-internacionais" class="destinos-baratos" data-aos="fade-up">
             <h2>Top Destinos Internacionais - América do Sul e Ásia</h2>
             <div class="destino-grid">
-                <div class="destino-card">
-                    <img src="images/machu.jpg" alt="Vista das ruínas de Machu Picchu com montanhas ao fundo" loading="lazy">
+                <article class="destino-card" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="images/machu.jpg" alt="Vista das ruínas de Machu Picchu com montanhas ao fundo sob um céu claro" loading="lazy">
                     <h3>Machu Picchu, Peru</h3>
                     <p>A partir de R$ 3.799</p>
-                    <a href="https://wa.me/553299938030?text=Oi,%20quero%20saber%20mais%20sobre%20Machu%20Picchu!" target="_blank" class="btn" aria-label="Saiba mais sobre Machu Picchu">Saiba Mais</a>
-                </div>
-                <div class="destino-card">
-                    <img src="images/buenos.jpg" alt="Calle Florida em Buenos Aires ao entardecer" loading="lazy">
+                    <a href="https://wa.me/553299938030?text=Oi,%20quero%20saber%20mais%20sobre%20Machu%20Picchu!" target="_blank" class="btn" aria-label="Saiba mais sobre Machu Picchu no WhatsApp">Saiba Mais</a>
+                </article>
+                <article class="destino-card" data-aos="zoom-in" data-aos-delay="400">
+                    <img src="images/buenos.jpg" alt="Calle Florida em Buenos Aires ao entardecer com luzes suaves" loading="lazy">
                     <h3>Buenos Aires, Argentina</h3>
                     <p>A partir de R$ 2.999</p>
-                    <a href="https://wa.me/553299938030?text=Oi,%20quero%20saber%20mais%20sobre%20Buenos%20Aires!" target="_blank" class="btn" aria-label="Saiba mais sobre Buenos Aires">Saiba Mais</a>
-                </div>
-                <div class="destino-card">
-                    <img src="images/santiago.jpg" alt="Vista aérea de Santiago com os Andes ao fundo" loading="lazy">
+                    <a href="https://wa.me/553299938030?text=Oi,%20quero%20saber%20mais%20sobre%20Buenos%20Aires!" target="_blank" class="btn" aria-label="Saiba mais sobre Buenos Aires no WhatsApp">Saiba Mais</a>
+                </article>
+                <article class="destino-card" data-aos="zoom-in" data-aos-delay="600">
+                    <img src="images/santiago.jpg" alt="Vista aérea de Santiago com os Andes ao fundo sob um céu azul" loading="lazy">
                     <h3>Santiago, Chile</h3>
                     <p>A partir de R$ 3.299</p>
-                    <a href="https://wa.me/553299938030?text=Oi,%20quero%20saber%20mais%20sobre%20Santiago!" target="_blank" class="btn" aria-label="Saiba mais sobre Santiago">Saiba Mais</a>
-                </div>
-                <div class="destino-card">
-                    <img src="images/bali.jpg" alt="Festival animado em Bali com multidão e luzes" loading="lazy">
+                    <a href="https://wa.me/553299938030?text=Oi,%20quero%20saber%20mais%20sobre%20Santiago!" target="_blank" class="btn" aria-label="Saiba mais sobre Santiago no WhatsApp">Saiba Mais</a>
+                </article>
+                <article class="destino-card" data-aos="zoom-in" data-aos-delay="800">
+                    <img src="images/bali.jpg" alt="Festival animado em Bali com multidão e luzes vibrantes ao pôr do sol" loading="lazy">
                     <h3>Bali, Indonésia</h3>
                     <p>A partir de R$ 4.499</p>
-                    <a href="https://wa.me/553299938030?text=Oi,%20quero%20saber%20mais%20sobre%20Bali!" target="_blank" class="btn" aria-label="Saiba mais sobre Bali">Saiba Mais</a>
-                </div>
-                <div class="destino-card">
-                    <img src="images/toquio.jpg" alt="Rua movimentada em Tóquio à noite com luzes e movimento" loading="lazy">
+                    <a href="https://wa.me/553299938030?text=Oi,%20quero%20saber%20mais%20sobre%20Bali!" target="_blank" class="btn" aria-label="Saiba mais sobre Bali no WhatsApp">Saiba Mais</a>
+                </article>
+                <article class="destino-card" data-aos="zoom-in" data-aos-delay="1000">
+                    <img src="images/toquio.jpg" alt="Cruzamento de Shibuya em Tóquio à noite com luzes brilhantes e multidão" loading="lazy">
                     <h3>Tóquio, Japão</h3>
                     <p>A partir de R$ 5.999</p>
-                    <a href="https://wa.me/553299938030?text=Oi,%20quero%20saber%20mais%20sobre%20Tóquio!" target="_blank" class="btn" aria-label="Saiba mais sobre Tóquio">Saiba Mais</a>
-                </div>
-                <div class="destino-card">
-                    <img src="images/bancoque.jpg" alt="Templo Wat Arun em Bangkok ao pôr do sol" loading="lazy">
+                    <a href="https://wa.me/553299938030?text=Oi,%20quero%20saber%20mais%20sobre%20Tóquio!" target="_blank" class="btn" aria-label="Saiba mais sobre Tóquio no WhatsApp">Saiba Mais</a>
+                </article>
+                <article class="destino-card" data-aos="zoom-in" data-aos-delay="1200">
+                    <img src="images/bancoque.jpg" alt="Templo Wat Arun em Bangkok ao pôr do sol com reflexos dourados no rio" loading="lazy">
                     <h3>Bangkok, Tailândia</h3>
                     <p>A partir de R$ 4.299</p>
-                    <a href="https://wa.me/553299938030?text=Oi,%20quero%20saber%20mais%20sobre%20Bangkok!" target="_blank" class="btn" aria-label="Saiba mais sobre Bangkok">Saiba Mais</a>
-                </div>
+                    <a href="https://wa.me/553299938030?text=Oi,%20quero%20saber%20mais%20sobre%20Bangkok!" target="_blank" class="btn" aria-label="Saiba mais sobre Bangkok no WhatsApp">Saiba Mais</a>
+                </article>
             </div>
         </section>
 
+        <!-- Seção Sobre -->
         <section id="sobre" class="section-card" data-aos="fade-up">
             <h2>Sobre a F&P Viagens</h2>
-            <p>A F&P Viagens é sua parceira premium para criar experiências de viagem únicas. Com anos de expertise, oferecemos passagens aéreas com preços imbatíveis, transfers personalizados e suporte 24/7 via WhatsApp, garantindo que cada momento seja memorável.</p>
+            <p>A F&P Viagens é sua parceira premium para criar experiências de viagem únicas. Com mais de uma década de expertise, oferecemos passagens aéreas com preços imbatíveis, transfers personalizados e suporte ininterrupto 24/7 via WhatsApp, garantindo que cada momento da sua jornada seja memorável e sem preocupações.</p>
         </section>
 
+        <!-- Seção Depoimentos -->
         <section id="depoimentos" class="section-card" data-aos="fade-up">
             <h2>Depoimentos de Clientes</h2>
             <div class="depoimento-grid">
-                <div class="depoimento-item">
-                    <p>"Ótimo atendimento e preços incríveis!" – Maria S.</p>
-                </div>
-                <div class="depoimento-item">
-                    <p>"Recomendo a F&P Viagens para todos os meus amigos." – João P.</p>
-                </div>
+                <article class="depoimento-item" data-aos="zoom-in" data-aos-delay="200">
+                    <p>"Ótimo atendimento e preços incríveis! A F&P transformou minha viagem a Paris em um sonho!" – Maria S.</p>
+                </article>
+                <article class="depoimento-item" data-aos="zoom-in" data-aos-delay="400">
+                    <p>"Recomendo a F&P Viagens para todos os meus amigos. Bali nunca foi tão acessível!" – João P.</p>
+                </article>
             </div>
         </section>
 
+        <!-- Seção Serviços -->
         <section id="servicos" class="section-card" data-aos="fade-up">
             <h2>Nossos Serviços Exclusivos</h2>
             <div class="service-grid">
-                <div class="service-item">
+                <article class="service-item" data-aos="zoom-in" data-aos-delay="200">
                     <h3><i class="fas fa-plane"></i> Passagens Aéreas</h3>
-                    <p>Voos nacionais e internacionais com tarifas competitivas e opções flexíveis para sua conveniência.</p>
-                </div>
-                <div class="service-item">
+                    <p>Voos nacionais e internacionais com tarifas competitivas e opções flexíveis de pagamento e cancelamento.</p>
+                </article>
+                <article class="service-item" data-aos="zoom-in" data-aos-delay="400">
                     <h3><i class="fas fa-car"></i> Transfers Personalizados</h3>
                     <p>Traslados seguros, confortáveis e pontuais para o seu destino, com atendimento sob medida.</p>
-                </div>
-                <div class="service-item">
+                </article>
+                <article class="service-item" data-aos="zoom-in" data-aos-delay="600">
                     <h3><i class="fas fa-headset"></i> Atendimento 24/7</h3>
                     <p>Suporte personalizado via WhatsApp a qualquer hora, para resolver suas dúvidas e planejar sua viagem.</p>
-                </div>
-                <div class="service-item">
+                </article>
+                <article class="service-item" data-aos="zoom-in" data-aos-delay="800">
                     <h3><i class="fas fa-paw"></i> Viaje com Pet</h3>
-                    <p>Serviços especializados para levar seu pet em viagens, com transporte seguro, documentação e suporte dedicado para garantir o conforto de seu companheiro durante toda a jornada.</p>
-                </div>
+                    <p>Serviços especializados para levar seu pet em viagens, com transporte seguro, documentação e suporte dedicado.</p>
+                </article>
             </div>
             <a href="https://wa.me/553299938030?text=Oi,%20quero%20saber%20mais%20sobre%20os%20serviços!" target="_blank" class="whatsapp-button mt-4 d-block" aria-label="Saiba mais sobre nossos serviços no WhatsApp">Saiba Mais no WhatsApp</a>
         </section>
 
+        <!-- Seção Contato -->
         <section id="contato" class="section-card" data-aos="fade-up">
             <h2>Entre em Contato</h2>
-            <p>Quer planejar sua próxima aventura? Clique abaixo e fale comigo no WhatsApp para cotações e dúvidas!</p>
+            <p>Quer planejar sua próxima aventura? Clique abaixo e conecte-se comigo no WhatsApp para cotações personalizadas ou dúvidas!</p>
             <a href="https://wa.me/553299938030?text=Oi,%20tenho%20uma%20dúvida%20sobre%20as%20promoções!" target="_blank" class="whatsapp-button" aria-label="Fale comigo no WhatsApp para dúvidas sobre promoções">Fale comigo no WhatsApp</a>
         </section>
     </main>
 
-    <footer class="footer">
-        <p>© 2025 F&P Viagens. Todos os direitos reservados.</p>
+    <!-- Rodapé -->
+    <footer class="footer" data-aos="fade-up">
+        <p>&copy; 2025 F&P Viagens. Todos os direitos reservados.</p>
         <div class="social-links">
-            <a href="https://x.com/fepviagens" target="_blank" aria-label="Perfil no X"><i class="fab fa-x-twitter"></i></a>
-            <a href="https://instagram.com/fepviagens" target="_blank" aria-label="Perfil no Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://facebook.com/fepviagens" target="_blank" aria-label="Perfil no Facebook"><i class="fab fa-facebook"></i></a>
-            <a href="https://linkedin.com/company/fepviagens" target="_blank" aria-label="Perfil no LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://tiktok.com/@fepviagens" target="_blank" aria-label="Perfil no TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://x.com/fepviagens" target="_blank" aria-label="Perfil oficial da F&P Viagens no X"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://instagram.com/fepviagens" target="_blank" aria-label="Perfil oficial da F&P Viagens no Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://facebook.com/fepviagens" target="_blank" aria-label="Perfil oficial da F&P Viagens no Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://linkedin.com/company/fepviagens" target="_blank" aria-label="Perfil oficial da F&P Viagens no LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://tiktok.com/@fepviagens" target="_blank" aria-label="Perfil oficial da F&P Viagens no TikTok"><i class="fab fa-tiktok"></i></a>
         </div>
-        <a href="https://wa.me/553299938030?text=Oi,%20quero%20falar%20com%20a%20F&P%20Viagens!" target="_blank" class="whatsapp-float" aria-label="Fale comigo no WhatsApp">
+        <a href="https://wa.me/553299938030?text=Oi,%20quero%20falar%20com%20a%20F&P%20Viagens!" target="_blank" class="whatsapp-float" aria-label="Fale comigo no WhatsApp para suporte imediato">
             <i class="fab fa-whatsapp"></i>
         </a>
     </footer>
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>AOS.init();</script>
-    <script src="script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js"></script>
     <script>
-        // Menu hamburguer
-        document.querySelector('.hamburger').addEventListener('click', () => {
-            document.querySelector('.nav-menu').classList.toggle('active');
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 200
         });
-
-        // Formulário de contato (removido, mas mantendo o script por segurança, embora não seja mais utilizado)
-        $(document).ready(function() {
-            // Este script não será mais necessário, mas mantido por precaução
-            $('#contact-form').ajaxForm({
-                success: function() {
-                    alert('Mensagem enviada com sucesso!');
-                    $('#contact-form')[0].reset();
-                },
-                error: function() {
-                    alert('Erro ao enviar mensagem. Tente novamente.');
-                }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        // Menu hamburguer com animação
+        document.querySelector('.hamburger').addEventListener('click', () => {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.classList.toggle('active');
+            const spans = document.querySelectorAll('.hamburger span');
+            spans.forEach((span, index) => {
+                span.style.transform = navMenu.classList.contains('active') 
+                    ? `rotate(${index === 1 ? '90deg' : '45deg'}) translate(${index === 1 ? '0' : '-5px'}, ${index === 1 ? '0' : '5px'})` 
+                    : 'none';
             });
         });
     </script>
