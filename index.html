@@ -11,7 +11,7 @@
     <meta property="og:title" content="F&P Viagens - Promoções Exclusivas e Inesquecíveis">
     <meta property="og:description" content="Passagens com preço baixo para viagens nacionais e internacionais, incluindo serviços para viajar com seu pet. Você curte sua viagem, a gente cuida do resto!">
     <meta property="og:image" content="https://midgardo17.github.io/fpviagens/images/fep-viagens-logo.png">
-    <meta property="og:image:alt" content="Logo da F&P Viagens com globo azul e avião branco">
+    <meta property="og:image:alt" content="Logo da F&P Viagens com um globo estilizado em gradiente azul e um avião branco voando ao redor, com o texto 'F&P Viagens' ao lado">
     <meta property="og:url" content="https://midgardo17.github.io/fpviagens">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="F&P Viagens">
@@ -92,6 +92,11 @@
             100% { transform: scale(1); }
         }
 
+        @keyframes growLogo {
+            0% { transform: scale(0.7); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
         /* === Utilitários === */
         .mt-4 { margin-top: 2rem; }
         .d-block { display: block; }
@@ -143,14 +148,45 @@
             align-items: center;
         }
 
+        .logo {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
         .logo-img {
-            height: clamp(40px, 5vw, 50px);
-            filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.1));
+            height: clamp(60px, 7vw, 80px); /* Tamanho aumentado */
+            width: auto;
+            filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
             transition: transform 0.3s ease;
+            animation: growLogo 1.5s ease-out forwards; /* Animação ao carregar */
+            animation-delay: 0.5s; /* Pequeno atraso para melhor efeito */
         }
 
         .logo-img:hover {
-            transform: scale(1.05);
+            transform: scale(1.1);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            color: white;
+            font-size: clamp(1rem, 2.5vw, 1.5rem); /* Ajuste no tamanho do texto para acompanhar o logo */
+        }
+
+        .logo-text .brand-name {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #FFFFFF;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo-text .brand-tagline {
+            font-family: 'Open Sans', sans-serif;
+            font-style: italic;
+            font-size: clamp(0.8rem, 1.8vw, 1rem);
+            color: #28A745;
         }
 
         .nav-menu {
@@ -200,7 +236,7 @@
             min-height: 80vh;
             max-height: 100vh;
             overflow: hidden;
-            margin-top: clamp(60px, 8vw, 80px);
+            margin-top: clamp(80px, 10vw, 100px); /* Ajustado para acomodar o logo maior */
             background-image: url('images/travel-background.jpg');
             background-size: cover;
             background-position: center;
@@ -433,7 +469,7 @@
                 display: none;
                 flex-direction: column;
                 position: absolute;
-                top: clamp(50px, 7vw, 60px);
+                top: clamp(70px, 9vw, 90px); /* Ajustado para o logo maior */
                 left: 0;
                 width: 100%;
                 background: #007bff;
@@ -444,12 +480,13 @@
             }
             .nav-menu.active { transform: translateY(0); }
             .nav-link { padding: clamp(0.8rem, 1.5vw, 1rem); font-size: clamp(0.9rem, 1.5vw, 1rem); text-align: center; }
-            .hero { margin-top: clamp(50px, 7vw, 60px); }
+            .hero { margin-top: clamp(70px, 9vw, 90px); }
             .destino-grid, .promo-grid, .service-grid, .depoimento-grid {
                 grid-template-columns: repeat(auto-fit, minmax(clamp(200px, 25vw, 250px), 1fr));
                 gap: clamp(15px, 2vw, 20px);
             }
             .section-card { margin: clamp(2.5rem, 4vw, 3rem) auto; padding: clamp(1.2rem, 2.5vw, 1.5rem); }
+            .logo-text { display: none; } /* Oculta o texto do logo em telas menores */
         }
 
         @media (max-width: 768px) {
@@ -467,7 +504,7 @@
         }
 
         @media (max-width: 480px) {
-            .hero { height: clamp(50vh, 60vw, 60vh); margin-top: clamp(40px, 6vw, 50px); }
+            .hero { height: clamp(50vh, 60vw, 60vh); margin-top: clamp(60px, 8vw, 80px); }
             .hero-content { padding: clamp(1rem, 2vw, 1.5rem); border-radius: 8px; }
             .hero-content h1 { font-size: clamp(1.5rem, 4vw, 2rem); }
             .hero-content p { font-size: clamp(0.9rem, 2vw, 1.2rem); }
@@ -487,7 +524,15 @@
     <header class="header" data-aos="fade-down">
         <nav class="navbar">
             <div class="logo">
-                <img src="images/fep-viagens-logo.png" alt="Logo da F&P Viagens com um globo azul e um avião branco circundando-o" class="logo-img" loading="lazy">
+                <img src="images/fep-viagens-logo.png" 
+                     alt="Logo da F&P Viagens com um globo estilizado em gradiente azul e um avião branco voando ao redor, com o texto 'F&P Viagens' ao lado" 
+                     title="F&P Viagens - Sua Parceira para Viagens Inesquecíveis" 
+                     class="logo-img" 
+                     loading="lazy">
+                <div class="logo-text">
+                    <span class="brand-name">F&P</span>
+                    <span class="brand-tagline">Viagens</span>
+                </div>
             </div>
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link" aria-label="Ir para a seção Home">Home</a></li>
@@ -582,7 +627,7 @@
                 <article class="destino-card" data-aos="zoom-in" data-aos-delay="1000" data-destination="toquio">
                     <img src="images/toquio.jpg" alt="Cruzamento de Shibuya em Tóquio à noite com luzes brilhantes e multidão" loading="lazy">
                     <h3>Tóquio, Japão</h3>
-                    <p>A partir de R$ <span class="price-text"></span></p>
+                    <p>A partir of R$ <span class="price-text"></span></p>
                     <a href="https://wa.me/553299938030?text=Oi,%20quero%20saber%20mais%20sobre%20Tóquio!" target="_blank" class="btn" aria-label="Saiba mais sobre Tóquio no WhatsApp">Saiba Mais</a>
                 </article>
                 <article class="destino-card" data-aos="zoom-in" data-aos-delay="1200" data-destination="bangkok">
@@ -683,19 +728,19 @@
         });
 
         // === Gerenciamento de Preços por Texto ===
-// Altere os valores abaixo para atualizar os preços
-const prices = {
-    "paris": 3750,        // De R$3.750 (KAYAK)
-    "bali": 5098,         // De R$5.098 (KAYAK)
-    "nova-york": 1507,    // De R$1.507 (KAYAK)
-    "machu-picchu": 1612, // De R$1.612 (Expedia)
-    "buenos-aires": 1170, // De R$1.170 (momondo)
-    "santiago": 1170,     // De R$1.170 (momondo)
-    "toquio": 3500,       // De R$3.500 (KAYAK)
-    "bangkok": 3120       // De R$3.120 (Skyscanner)
-    // Para adicionar novos destinos, adicione uma nova linha aqui, ex.:
-    // "novo-destino": 4999
-}
+        // Altere os valores abaixo para atualizar os preços
+        const prices = {
+            "paris": 3750,        // De R$3.750 (KAYAK)
+            "bali": 5098,         // De R$5.098 (KAYAK)
+            "nova-york": 1507,    // De R$1.507 (KAYAK)
+            "machu-picchu": 1612, // De R$1.612 (Expedia)
+            "buenos-aires": 1170, // De R$1.170 (momondo)
+            "santiago": 1170,     // De R$1.170 (momondo)
+            "toquio": 3500,       // De R$3.500 (KAYAK)
+            "bangkok": 3120       // De R$3.120 (Skyscanner)
+            // Para adicionar novos destinos, adicione uma nova linha aqui, ex.:
+            // "novo-destino": 4999
+        };
 
         // Aplica os preços definidos acima aos elementos da página
         document.addEventListener('DOMContentLoaded', () => {
