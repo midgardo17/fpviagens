@@ -19,45 +19,8 @@
     <!-- Links de Estilo e Bibliotecas -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Open+Sans:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
-    <!-- Structured Data para SEO -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "TravelAgency",
-        "name": "F&P Viagens",
-        "url": "https://midgardo17.github.io/fpviagens",
-        "logo": "https://midgardo17.github.io/fpviagens/images/fep-viagens-logo.png",
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+55-32-99938-030",
-            "contactType": "Customer Service",
-            "availableLanguage": ["Portuguese", "English", "Spanish"]
-        },
-        "sameAs": [
-            "https://instagram.com/fepviagens",
-            "https://facebook.com/fepviagens",
-            "https://x.com/fepviagens",
-            "https://linkedin.com/company/fepviagens",
-            "https://tiktok.com/@fepviagens"
-        ],
-        "offers": [
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "Pacote para Machu Picchu"
-                },
-                "price": "3799.00",
-                "priceCurrency": "BRL",
-                "availability": "InStock",
-                "url": "https://wa.me/553299938030?text=Oi,%20quero%20saber%20mais%20sobre%20Machu%20Picchu!"
-            }
-        ]
-    }
-    </script>
     <style>
         /* === Reset e Estilos Globais === */
         * {
@@ -125,8 +88,6 @@
             background: #1EBE57;
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(30, 190, 87, 0.7);
-            outline: 2px solid #1EBE57;
-            outline-offset: 2px;
             animation: neonGlow 1.5s infinite;
         }
 
@@ -135,7 +96,7 @@
             transition: transform 0.1s ease;
         }
 
-        /* === Cabeçalho === */
+        /* === Cabeçalho com Destaque === */
         .header {
             background-color: #007BFF;
             padding: clamp(15px, 2vw, 20px);
@@ -206,14 +167,28 @@
             text-decoration: none;
             font-size: clamp(0.9rem, 1.5vw, 1.1rem);
             font-weight: 500;
-            transition: color 0.3s ease, transform 0.2s ease;
+            transition: all 0.3s ease;
+            position: relative;
         }
 
         .nav-link:hover, .nav-link:focus {
             color: #28A745;
-            transform: translateY(-2px);
-            outline: 2px solid #28A745;
-            outline-offset: 2px;
+            transform: translateY(-2px) translateZ(5px); /* Microinteração 3D */
+        }
+
+        /* Destaque para Promoção Relâmpago */
+        .nav-link.flash-highlight {
+            position: relative;
+        }
+
+        .nav-link.flash-highlight::after {
+            content: '🔥';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            font-size: 0.8rem;
+            color: #FFD700;
+            animation: pulse 2s infinite;
         }
 
         .hamburger {
@@ -328,11 +303,12 @@
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
         }
 
-        .destino-card img, .promo-item img {
+        .destino-card img, .promo-item img, .image-360 {
             width: 100%;
             height: clamp(150px, 20vw, 200px);
             object-fit: cover;
             transition: opacity 0.3s ease;
+            loading: lazy; /* Otimização para imagens 360° */
         }
 
         .destino-card img:hover, .promo-item img:hover {
@@ -432,8 +408,6 @@
         .social-links a:hover, .social-links a:focus {
             color: #28A745;
             transform: scale(1.2);
-            outline: 2px solid #28A745;
-            outline-offset: 2px;
         }
 
         .whatsapp-float {
@@ -448,25 +422,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            text-decoration: none;
             box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5);
-            transition: background 0.3s ease, transform 0.3s ease;
             animation: pulse 2s infinite;
             z-index: 1001;
         }
 
-        .whatsapp-float:hover, .whatsapp-float:focus {
+        .whatsapp-float:hover {
             background: #1EBE57;
-            transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(30, 190, 87, 0.7);
-            outline: 2px solid #1EBE57;
-            outline-offset: 2px;
             animation: neonGlow 1.5s infinite;
-        }
-
-        .whatsapp-float:active {
-            transform: scale(0.95);
-            transition: transform 0.1s ease;
         }
 
         /* === Responsividade === */
@@ -482,47 +445,32 @@
                 background: #007bff;
                 padding: clamp(1rem, 2vw, 1.5rem);
                 box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-                transition: transform 0.3s ease-in-out;
-                transform: translateY(-100%);
             }
-            .nav-menu.active { transform: translateY(0); }
-            .nav-link { padding: clamp(0.8rem, 1.5vw, 1rem); font-size: clamp(0.9rem, 1.5vw, 1rem); text-align: center; }
-            .hero { margin-top: clamp(70px, 9vw, 90px); }
+            .nav-menu.active { display: flex; }
             .destino-grid, .promo-grid, .service-grid, .depoimento-grid {
                 grid-template-columns: repeat(auto-fit, minmax(clamp(200px, 25vw, 250px), 1fr));
-                gap: clamp(15px, 2vw, 20px);
             }
-            .section-card { margin: clamp(2.5rem, 4vw, 3rem) auto; padding: clamp(1.2rem, 2.5vw, 1.5rem); }
             .logo-text { display: none; }
         }
 
         @media (max-width: 768px) {
-            .hero { height: clamp(60vh, 70vw, 70vh); }
             .hero-content h1 { font-size: clamp(1.8rem, 4vw, 2.5rem); }
             .hero-content p { font-size: clamp(1rem, 2.5vw, 1.5rem); }
-            .whatsapp-button { padding: clamp(0.8rem, 2vw, 1rem) clamp(1.5rem, 3vw, 2rem); font-size: clamp(0.9rem, 2vw, 1rem); }
+            .whatsapp-button { font-size: clamp(0.9rem, 2vw, 1rem); }
             .destinos-baratos h2, .section-card h2 { font-size: clamp(1.8rem, 3.5vw, 2rem); }
-            .destino-card h3, .promo-item h3 { font-size: clamp(1rem, 2.5vw, 1.2rem); }
-            .destino-card p, .promo-item p { font-size: clamp(0.8rem, 1.8vw, 1rem); }
-            .btn { padding: clamp(8px, 1.5vw, 10px) clamp(12px, 2.5vw, 15px); font-size: clamp(0.8rem, 1.5vw, 1rem); }
-            .section-card p { font-size: clamp(0.9rem, 1.8vw, 1rem); }
-            .promo-grid, .service-grid { grid-template-columns: repeat(auto-fit, minmax(clamp(200px, 25vw, 250px), 1fr)); }
+            .btn { font-size: clamp(0.8rem, 1.5vw, 1rem); }
             .whatsapp-float { width: clamp(35px, 4vw, 40px); height: clamp(35px, 4vw, 40px); }
         }
 
         @media (max-width: 480px) {
             .hero { height: clamp(50vh, 60vw, 60vh); margin-top: clamp(60px, 8vw, 80px); }
-            .hero-content { padding: clamp(1rem, 2vw, 1.5rem); border-radius: 8px; }
             .hero-content h1 { font-size: clamp(1.5rem, 4vw, 2rem); }
             .hero-content p { font-size: clamp(0.9rem, 2vw, 1.2rem); }
-            .whatsapp-button { padding: clamp(0.6rem, 1.5vw, 0.8rem) clamp(1rem, 2.5vw, 1.5rem); font-size: clamp(0.8rem, 1.8vw, 1rem); }
-            .destino-grid, .promo-grid, .service-grid, .depoimento-grid { grid-template-columns: 1fr; gap: clamp(10px, 1.5vw, 15px); }
+            .whatsapp-button { font-size: clamp(0.8rem, 1.8vw, 1rem); }
+            .destino-grid, .promo-grid, .service-grid, .depoimento-grid { grid-template-columns: 1fr; }
             .destino-card img, .promo-item img { height: clamp(120px, 15vw, 150px); }
-            .btn { padding: clamp(6px, 1.2vw, 8px) clamp(10px, 2vw, 12px); font-size: clamp(0.7rem, 1.5vw, 0.9rem); }
-            .section-card { margin: clamp(2rem, 4vw, 2.5rem) auto; padding: clamp(1rem, 2vw, 1.2rem); border-radius: 10px; }
-            .section-card h2 { font-size: clamp(1.5rem, 3vw, 1.8rem); }
-            .section-card p { font-size: clamp(0.8rem, 1.5vw, 0.9rem); }
-            .whatsapp-float { width: clamp(30px, 3.5vw, 35px); height: clamp(30px, 3.5vw, 35px); bottom: clamp(5px, 1.5vw, 10px); right: clamp(5px, 1.5vw, 10px); }
+            .btn { font-size: clamp(0.7rem, 1.5vw, 0.9rem); }
+            .whatsapp-float { width: clamp(30px, 3.5vw, 35px); height: clamp(30px, 3.5vw, 35px); }
         }
     </style>
 </head>
@@ -546,7 +494,7 @@
                 <li><a href="#sobre" class="nav-link" aria-label="Ir para a seção Sobre">Sobre</a></li>
                 <li><a href="#depoimentos" class="nav-link" aria-label="Ir para a seção Depoimentos">Depoimentos</a></li>
                 <li><a href="#servicos" class="nav-link" aria-label="Ir para a seção Serviços">Serviços</a></li>
-                <li><a href="#promocoes" class="nav-link" aria-label="Ir para a seção Promoções">Promoções</a></li>
+                <li><a href="relampago.html" class="nav-link flash-highlight" aria-label="Ir para a promoção relâmpago">Promoções</a></li>
                 <li><a href="#contato" class="nav-link" aria-label="Ir para a seção Contato">Contato</a></li>
             </ul>
             <div class="hamburger" aria-label="Abrir menu de navegação">
@@ -579,25 +527,25 @@
                 <article class="promo-item" data-aos="zoom-in" data-aos-delay="200" data-destination="paris">
                     <img src="images/paris.jpg" alt="Torre Eiffel em Paris ao entardecer com luzes suaves" loading="lazy">
                     <h3>Paris, França</h3>
-                    <p>Descubra a cidade do amor com nossos pacotes exclusivos. A partir de R$ <span class="price-text"></span></p>
+                    <p>Deslumbre-se com a Torre Eiffel, cafés charmosos e romantismo eterno. A partir de R$ 3.750.</p>
                     <a href="https://wa.me/553299938030?text=Oi,%20quero%20saber%20mais%20sobre%20a%20promoção%20para%20Paris!" target="_blank" class="btn" aria-label="Saiba mais sobre a promoção para Paris no WhatsApp">Saiba Mais</a>
                 </article>
                 <article class="promo-item" data-aos="zoom-in" data-aos-delay="400" data-destination="bali">
                     <img src="images/bali.jpg" alt="Festival animado em Bali com multidão e luzes vibrantes ao pôr do sol" loading="lazy">
                     <h3>Bali, Indonésia</h3>
-                    <p>Relaxe em praias paradisíacas com promoções imperdíveis. A partir de R$ <span class="price-text"></span></p>
+                    <p>Mergulhe em praias paradisíacas, templos místicos e cultura vibrante. A partir de R$ 5.098.</p>
                     <a href="https://wa.me/553299938030?text=Oi,%20quero%20saber%20mais%20sobre%20a%20promoção%20para%20Bali!" target="_blank" class="btn" aria-label="Saiba mais sobre a promoção para Bali no WhatsApp">Saiba Mais</a>
                 </article>
                 <article class="promo-item" data-aos="zoom-in" data-aos-delay="600" data-destination="nova-york">
                     <img src="images/nova.jpg" alt="Estátua da Liberdade em Nova York com o skyline de Manhattan ao fundo" loading="lazy">
                     <h3>Nova York, EUA</h3>
-                    <p>Explore a cidade que nunca dorme com nossos pacotes especiais. A partir de R$ <span class="price-text"></span></p>
+                    <p>Viva a energia de Times Square, arranha-céus icônicos e cultura pulsante. A partir de R$ 1.507.</p>
                     <a href="https://wa.me/553299938030?text=Oi,%20quero%20saber%20mais%20sobre%20a%20promoção%20para%20Nova%20York!" target="_blank" class="btn" aria-label="Saiba mais sobre a promoção para Nova York no WhatsApp">Saiba Mais</a>
                 </article>
                 <article class="promo-item" data-aos="zoom-in" data-aos-delay="800" data-destination="machu-picchu">
                     <img src="images/machu.jpg" alt="Vista das ruínas de Machu Picchu com montanhas ao fundo sob um céu claro" loading="lazy">
                     <h3>Machu Picchu, Peru</h3>
-                    <p>Aventure-se em uma das maravilhas do mundo com descontos exclusivos. A partir de R$ <span class="price-text"></span></p>
+                    <p>Aventure-se nas ruínas místicas com vistas de tirar o fôlego. A partir de R$ 1.612.</p>
                     <a href="https://wa.me/553299938030?text=Oi,%20quero%20saber%20mais%20sobre%20a%20promoção%20para%20Machu%20Picchu!" target="_blank" class="btn" aria-label="Saiba mais sobre a promoção para Machu Picchu no WhatsApp">Saiba Mais</a>
                 </article>
             </div>
@@ -610,37 +558,37 @@
                 <article class="destino-card" data-aos="zoom-in" data-aos-delay="200" data-destination="machu-picchu">
                     <img src="images/machu.jpg" alt="Vista das ruínas de Machu Picchu com montanhas ao fundo sob um céu claro" loading="lazy">
                     <h3>Machu Picchu, Peru</h3>
-                    <p>A partir de R$ <span class="price-text"></span></p>
+                    <p>Explore ruínas místicas entre montanhas, um tesouro histórico único. A partir de R$ 1.612.</p>
                     <a href="https://wa.me/553299938030?text=Oi,%20quero%20saber%20mais%20sobre%20Machu%20Picchu!" target="_blank" class="btn" aria-label="Saiba mais sobre Machu Picchu no WhatsApp">Saiba Mais</a>
                 </article>
                 <article class="destino-card" data-aos="zoom-in" data-aos-delay="400" data-destination="buenos-aires">
                     <img src="images/buenos.jpg" alt="Calle Florida em Buenos Aires ao entardecer com luzes suaves" loading="lazy">
                     <h3>Buenos Aires, Argentina</h3>
-                    <p>A partir de R$ <span class="price-text"></span></p>
+                    <p>Delicie-se com tango, arquitetura elegante e gastronomia rica. A partir de R$ 1.170.</p>
                     <a href="https://wa.me/553299938030?text=Oi,%20quero%20saber%20mais%20sobre%20Buenos%20Aires!" target="_blank" class="btn" aria-label="Saiba mais sobre Buenos Aires no WhatsApp">Saiba Mais</a>
                 </article>
                 <article class="destino-card" data-aos="zoom-in" data-aos-delay="600" data-destination="santiago">
                     <img src="images/santiago.jpg" alt="Vista aérea de Santiago com os Andes ao fundo sob um céu azul" loading="lazy">
                     <h3>Santiago, Chile</h3>
-                    <p>A partir de R$ <span class="price-text"></span></p>
+                    <p>Admire os Andes e vinhedos encantadores em uma cidade vibrante. A partir de R$ 1.170.</p>
                     <a href="https://wa.me/553299938030?text=Oi,%20quero%20saber%20mais%20sobre%20Santiago!" target="_blank" class="btn" aria-label="Saiba mais sobre Santiago no WhatsApp">Saiba Mais</a>
                 </article>
                 <article class="destino-card" data-aos="zoom-in" data-aos-delay="800" data-destination="bali">
                     <img src="images/bali.jpg" alt="Festival animado em Bali com multidão e luzes vibrantes ao pôr do sol" loading="lazy">
                     <h3>Bali, Indonésia</h3>
-                    <p>A partir de R$ <span class="price-text"></span></p>
+                    <p>Descubra praias de tirar o fôlego e templos sagrados exóticos. A partir de R$ 5.098.</p>
                     <a href="https://wa.me/553299938030?text=Oi,%20quero%20saber%20mais%20sobre%20Bali!" target="_blank" class="btn" aria-label="Saiba mais sobre Bali no WhatsApp">Saiba Mais</a>
                 </article>
                 <article class="destino-card" data-aos="zoom-in" data-aos-delay="1000" data-destination="toquio">
                     <img src="images/toquio.jpg" alt="Cruzamento de Shibuya em Tóquio à noite com luzes brilhantes e multidão" loading="lazy">
                     <h3>Tóquio, Japão</h3>
-                    <p>A partir of R$ <span class="price-text"></span></p>
+                    <p> mergulhe na modernidade de Shibuya e tradições milenares. A partir de R$ 3.500.</p>
                     <a href="https://wa.me/553299938030?text=Oi,%20quero%20saber%20mais%20sobre%20Tóquio!" target="_blank" class="btn" aria-label="Saiba mais sobre Tóquio no WhatsApp">Saiba Mais</a>
                 </article>
                 <article class="destino-card" data-aos="zoom-in" data-aos-delay="1200" data-destination="bangkok">
                     <img src="images/bancoque.jpg" alt="Templo Wat Arun em Bangkok ao pôr do sol com reflexos dourados no rio" loading="lazy">
                     <h3>Bangkok, Tailândia</h3>
-                    <p>A partir de R$ <span class="price-text"></span></p>
+                    <p>Encante-se com templos dourados e mercados flutuantes vibrantes. A partir de R$ 3.120.</p>
                     <a href="https://wa.me/553299938030?text=Oi,%20quero%20saber%20mais%20sobre%20Bangkok!" target="_blank" class="btn" aria-label="Saiba mais sobre Bangkok no WhatsApp">Saiba Mais</a>
                 </article>
             </div>
@@ -690,10 +638,10 @@
         </section>
 
         <!-- Seção Contato -->
-        <section id="contato" class="section-card" data-aos="fade-up">
+        <section id="contato" class="section-card">
             <h2>Entre em Contato</h2>
-            <p>Quer planejar sua próxima aventura? Clique abaixo e conecte-se comigo no WhatsApp para cotações personalizadas ou dúvidas!</p>
-            <a href="https://wa.me/553299938030?text=Oi,%20tenho%20uma%20dúvida%20sobre%20as%20promoções!" target="_blank" class="whatsapp-button" aria-label="Fale comigo no WhatsApp para dúvidas sobre promoções">Fale comigo no WhatsApp</a>
+            <p>Quer planejar sua próxima aventura? Conecte-se comigo no WhatsApp!</p>
+            <a href="https://wa.me/553299938030?text=Oi,%20tenho%20uma%20dúvida%20sobre%20as%20promoções!" target="_blank" class="whatsapp-button mt-4 d-block" aria-label="Fale comigo no WhatsApp para dúvidas sobre promoções">Fale comigo no WhatsApp</a>
         </section>
     </main>
 
