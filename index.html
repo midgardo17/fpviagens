@@ -97,11 +97,16 @@
             100% { transform: scale(1); opacity: 1; }
         }
 
+        @keyframes neonGlow {
+            0%, 100% { filter: drop-shadow(0 0 8px rgba(37, 211, 102, 0.4)); }
+            50% { filter: drop-shadow(0 0 12px rgba(37, 211, 102, 0.8)); }
+        }
+
         /* === Utilitários === */
         .mt-4 { margin-top: 2rem; }
         .d-block { display: block; }
 
-        /* === Botões === */
+        /* === Botões com Neon Glow === */
         .btn, .whatsapp-button {
             display: inline-block;
             padding: clamp(0.8rem, 2vw, 1.2rem) clamp(1.5rem, 3vw, 2.5rem);
@@ -122,6 +127,7 @@
             box-shadow: 0 6px 20px rgba(30, 190, 87, 0.7);
             outline: 2px solid #1EBE57;
             outline-offset: 2px;
+            animation: neonGlow 1.5s infinite;
         }
 
         .btn:active, .whatsapp-button:active {
@@ -156,12 +162,12 @@
         }
 
         .logo-img {
-            height: clamp(60px, 7vw, 80px); /* Tamanho aumentado */
+            height: clamp(60px, 7vw, 80px);
             width: auto;
             filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
             transition: transform 0.3s ease;
-            animation: growLogo 1.5s ease-out forwards; /* Animação ao carregar */
-            animation-delay: 0.5s; /* Pequeno atraso para melhor efeito */
+            animation: growLogo 1.5s ease-out forwards;
+            animation-delay: 0.5s;
         }
 
         .logo-img:hover {
@@ -172,7 +178,7 @@
             display: flex;
             flex-direction: column;
             color: white;
-            font-size: clamp(1rem, 2.5vw, 1.5rem); /* Ajuste no tamanho do texto para acompanhar o logo */
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
         }
 
         .logo-text .brand-name {
@@ -236,7 +242,7 @@
             min-height: 80vh;
             max-height: 100vh;
             overflow: hidden;
-            margin-top: clamp(80px, 10vw, 100px); /* Ajustado para acomodar o logo maior */
+            margin-top: clamp(80px, 10vw, 100px);
             background-image: url('images/travel-background.jpg');
             background-size: cover;
             background-position: center;
@@ -455,6 +461,7 @@
             box-shadow: 0 6px 20px rgba(30, 190, 87, 0.7);
             outline: 2px solid #1EBE57;
             outline-offset: 2px;
+            animation: neonGlow 1.5s infinite;
         }
 
         .whatsapp-float:active {
@@ -469,7 +476,7 @@
                 display: none;
                 flex-direction: column;
                 position: absolute;
-                top: clamp(70px, 9vw, 90px); /* Ajustado para o logo maior */
+                top: clamp(70px, 9vw, 90px);
                 left: 0;
                 width: 100%;
                 background: #007bff;
@@ -486,7 +493,7 @@
                 gap: clamp(15px, 2vw, 20px);
             }
             .section-card { margin: clamp(2.5rem, 4vw, 3rem) auto; padding: clamp(1.2rem, 2.5vw, 1.5rem); }
-            .logo-text { display: none; } /* Oculta o texto do logo em telas menores */
+            .logo-text { display: none; }
         }
 
         @media (max-width: 768px) {
@@ -728,26 +735,21 @@
         });
 
         // === Gerenciamento de Preços por Texto ===
-        // Altere os valores abaixo para atualizar os preços
         const prices = {
-            "paris": 3750,        // De R$3.750 (KAYAK)
-            "bali": 5098,         // De R$5.098 (KAYAK)
-            "nova-york": 1507,    // De R$1.507 (KAYAK)
-            "machu-picchu": 1612, // De R$1.612 (Expedia)
-            "buenos-aires": 1170, // De R$1.170 (momondo)
-            "santiago": 1170,     // De R$1.170 (momondo)
-            "toquio": 3500,       // De R$3.500 (KAYAK)
-            "bangkok": 3120       // De R$3.120 (Skyscanner)
-            // Para adicionar novos destinos, adicione uma nova linha aqui, ex.:
-            // "novo-destino": 4999
+            "paris": 3750,
+            "bali": 5098,
+            "nova-york": 1507,
+            "machu-picchu": 1612,
+            "buenos-aires": 1170,
+            "santiago": 1170,
+            "toquio": 3500,
+            "bangkok": 3120
         };
 
-        // Aplica os preços definidos acima aos elementos da página
         document.addEventListener('DOMContentLoaded', () => {
             const promoItems = document.querySelectorAll('.promo-item');
             const destinoItems = document.querySelectorAll('.destino-card');
 
-            // Atualiza os preços na seção "Destinos em Promoção"
             promoItems.forEach(item => {
                 const destination = item.getAttribute('data-destination');
                 if (prices[destination]) {
@@ -755,7 +757,6 @@
                 }
             });
 
-            // Atualiza os preços na seção "Destinos Internacionais"
             destinoItems.forEach(item => {
                 const destination = item.getAttribute('data-destination');
                 if (prices[destination]) {
@@ -763,582 +764,6 @@
                 }
             });
         });
-    </script><!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>F&P Viagens - Viva o Mundo dos Seus Sonhos</title>
-    <meta name="description" content="Promoções exclusivas para Machu Picchu, Paris, Bali e mais – preços a partir de R$ 1.507 e serviços premium com a F&P Viagens!">
-    <meta name="keywords" content="promoções de viagens, passagens baratas, Machu Picchu, Paris, Bali, Nova York, viajar com pet, agência de viagens">
-    <meta name="author" content="F&P Viagens">
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="F&P Viagens - Viva o Mundo dos Seus Sonhos">
-    <meta property="og:description" content="Preços irresistíveis para destinos nacionais e internacionais, com serviços premium e suporte 24/7. Reserve agora!">
-    <meta property="og:image" content="https://midgardo17.github.io/fpviagens/images/fep-viagens-logo.png">
-    <meta property="og:url" content="https://midgardo17.github.io/fpviagens">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <!-- Links de Estilo e Bibliotecas -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <!-- Structured Data para SEO -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "TravelAgency",
-        "name": "F&P Viagens",
-        "url": "https://midgardo17.github.io/fpviagens",
-        "logo": "https://midgardo17.github.io/fpviagens/images/fep-viagens-logo.png",
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+55-32-99938-030",
-            "contactType": "Customer Service",
-            "availableLanguage": ["Portuguese", "English", "Spanish"]
-        },
-        "offers": [
-            {
-                "@type": "Offer",
-                "itemOffered": { "@type": "Service", "name": "Pacote para Machu Picchu" },
-                "price": "1612.00",
-                "priceCurrency": "BRL",
-                "availability": "LimitedAvailability",
-                "url": "https://wa.me/553299938030?text=Oi,%20quero%20Machu%20Picchu!"
-            }
-        ]
-    }
     </script>
-    <style>
-        /* === Reset e Estilos Globais === */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Open Sans', sans-serif;
-            background-color: #EDEDED;
-            line-height: 1.6;
-            scroll-behavior: smooth;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        h1, h2, h3 {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-        }
-
-        /* === Animações === */
-        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
-        @keyframes growLogo { 0% { transform: scale(0.7); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
-
-        /* === Utilitários === */
-        .mt-4 { margin-top: 2rem; }
-        .d-block { display: block; }
-
-        /* === Botões === */
-        .btn, .whatsapp-button {
-            display: inline-block;
-            padding: clamp(0.8rem, 2vw, 1.2rem) clamp(1.5rem, 3vw, 2.5rem);
-            background: #25D366;
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            font-size: clamp(0.9rem, 2vw, 1.2rem);
-            font-weight: 700;
-            border: 2px solid #FFD700;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5);
-            transition: all 0.3s ease;
-        }
-
-        .btn:hover, .whatsapp-button:hover {
-            background: #1EBE57;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(30, 190, 87, 0.7);
-        }
-
-        /* === Cabeçalho === */
-        .header {
-            background: linear-gradient(135deg, #1A3C6D 0%, #007BFF 100%);
-            padding: clamp(15px, 2vw, 20px);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .navbar {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo-img {
-            height: clamp(60px, 7vw, 80px);
-            filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
-            animation: growLogo 1.5s ease-out forwards;
-        }
-
-        .nav-menu {
-            display: flex;
-            gap: clamp(1rem, 2vw, 2rem);
-            list-style: none;
-        }
-
-        .nav-link {
-            color: white;
-            text-decoration: none;
-            font-size: clamp(0.9rem, 1.5vw, 1.1rem);
-            font-weight: 500;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: #FFD700;
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        .nav-link:hover {
-            color: #FFD700;
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background-color: white;
-            transition: all 0.3s ease;
-        }
-
-        /* === Seção Hero (Carrossel) === */
-        .hero {
-            position: relative;
-            min-height: 80vh;
-            margin-top: clamp(80px, 10vw, 100px);
-            overflow: hidden;
-        }
-
-        .swiper-slide {
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .swiper-slide::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6));
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            color: white;
-            padding: clamp(1.5rem, 3vw, 2rem);
-        }
-
-        .hero-content h1 {
-            font-size: clamp(2rem, 5vw, 3rem);
-            margin-bottom: 1rem;
-            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-            animation: fadeInDown 1s ease-out;
-        }
-
-        .hero-content p {
-            font-size: clamp(1.2rem, 3vw, 1.5rem);
-            margin-bottom: 2rem;
-            animation: fadeInUp 1s ease-out 0.5s;
-        }
-
-        /* === Cards de Destinos e Promoções === */
-        .destinos-baratos, .section-card {
-            padding: clamp(40px, 5vw, 60px) clamp(10px, 2vw, 20px);
-            text-align: center;
-            background-color: #fff;
-        }
-
-        .destinos-baratos h2, .section-card h2 {
-            font-size: clamp(2rem, 4vw, 2.5rem);
-            margin-bottom: clamp(30px, 4vw, 40px);
-            color: #1A3C6D;
-        }
-
-        .destino-grid, .promo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(clamp(200px, 25vw, 300px), 1fr));
-            gap: clamp(20px, 3vw, 30px);
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .destino-card, .promo-item {
-            background: #f9f9f9;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .destino-card:hover, .promo-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .destino-card img, .promo-item img {
-            width: 100%;
-            height: clamp(150px, 20vw, 200px);
-            object-fit: cover;
-        }
-
-        .destino-card h3, .promo-item h3 {
-            font-size: clamp(1.2rem, 3vw, 1.5rem);
-            margin: 15px 0;
-            color: #1A3C6D;
-            padding: 0 15px;
-        }
-
-        .destino-card p, .promo-item p {
-            font-size: clamp(0.9rem, 2vw, 1rem);
-            color: #444;
-            margin-bottom: 15px;
-            padding: 0 15px;
-        }
-
-        .timer {
-            color: #FF4500;
-            font-weight: bold;
-        }
-
-        /* === Seções de Serviços e Depoimentos === */
-        .service-grid, .depoimento-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(clamp(250px, 30vw, 300px), 1fr));
-            gap: 2rem;
-        }
-
-        .service-item, .depoimento-item {
-            padding: 1.5rem;
-            background: #f9f9f9;
-            border-radius: 8px;
-            transition: transform 0.3s ease;
-        }
-
-        .service-item:hover, .depoimento-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .service-item i {
-            color: #1A3C6D;
-            margin-right: 10px;
-        }
-
-        .depoimento-item img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            margin-bottom: 10px;
-        }
-
-        /* === Rodapé === */
-        .footer {
-            background: linear-gradient(135deg, #1A3C6D 0%, #007BFF 100%);
-            color: white;
-            text-align: center;
-            padding: 1.5rem;
-        }
-
-        .social-links a {
-            color: white;
-            margin: 10px;
-            font-size: 1.2rem;
-            transition: color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: #FFD700;
-        }
-
-        /* === WhatsApp Flutuante === */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #25D366;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5);
-            animation: pulse 2s infinite;
-            z-index: 1001;
-        }
-
-        .whatsapp-float:hover {
-            background: #1EBE57;
-            transform: scale(1.1);
-        }
-
-        .whatsapp-tooltip {
-            display: none;
-            position: absolute;
-            right: 60px;
-            background: #25D366;
-            padding: 5px 10px;
-            border-radius: 5px;
-            color: white;
-            font-size: 12px;
-            white-space: nowrap;
-        }
-
-        .whatsapp-float:hover .whatsapp-tooltip {
-            display: block;
-        }
-
-        /* === Responsividade === */
-        @media (max-width: 1024px) {
-            .hamburger { display: flex; }
-            .nav-menu {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 90px;
-                left: 0;
-                width: 100%;
-                background: #1A3C6D;
-                padding: 1.5rem;
-            }
-            .nav-menu.active { display: flex; }
-        }
-
-        @media (max-width: 768px) {
-            .hero-content h1 { font-size: clamp(1.8rem, 4vw, 2.5rem); }
-            .destino-grid, .promo-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
-        }
-
-        @media (max-width: 480px) {
-            .hero-content h1 { font-size: clamp(1.5rem, 4vw, 2rem); }
-            .destino-grid, .promo-grid { grid-template-columns: 1fr; }
-            .whatsapp-float { width: 40px; height: 40px; }
-        }
-    </style>
-</head>
-<body>
-    <!-- Cabeçalho -->
-    <header class="header" data-aos="fade-down">
-        <nav class="navbar">
-            <div class="logo">
-                <img src="images/fep-viagens-logo.png" alt="Logo F&P Viagens" class="logo-img" loading="lazy">
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#sobre" class="nav-link">Sobre</a></li>
-                <li><a href="#depoimentos" class="nav-link">Depoimentos</a></li>
-                <li><a href="#servicos" class="nav-link">Serviços</a></li>
-                <li><a href="#promocoes" class="nav-link">Promoções</a></li>
-                <li><a href="#contato" class="nav-link">Contato</a></li>
-            </ul>
-            <a href="https://wa.me/553299938030" class="btn">Fale Agora</a>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Seção Hero (Carrossel) -->
-    <section id="home" class="swiper-container hero" data-aos="fade-up">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide" style="background-image: url('images/paris.jpg');">
-                <div class="hero-content">
-                    <h1>Viva Paris dos Seus Sonhos</h1>
-                    <p>A partir de R$ 3.750 – Garanta já!</p>
-                    <a href="https://wa.me/553299938030?text=Oi,%20quero%20Paris!" class="whatsapp-button">Reserve Agora</a>
-                </div>
-            </div>
-            <div class="swiper-slide" style="background-image: url('images/bali.jpg');">
-                <div class="hero-content">
-                    <h1>Relaxe em Bali</h1>
-                    <p>A partir de R$ 5.098 – Só 5 vagas!</p>
-                    <a href="https://wa.me/553299938030?text=Oi,%20quero%20Bali!" class="whatsapp-button">Reserve Agora</a>
-                </div>
-            </div>
-            <div class="swiper-slide" style="background-image: url('images/nova.jpg');">
-                <div class="hero-content">
-                    <h1>Explore Nova York</h1>
-                    <p>A partir de R$ 1.507 – Hoje só!</p>
-                    <a href="https://wa.me/553299938030?text=Oi,%20quero%20Nova%20York!" class="whatsapp-button">Reserve Agora</a>
-                </div>
-            </div>
-        </div>
-        <div class="swiper-pagination"></div>
-    </section>
-
-    <!-- Seção Promoções -->
-    <section id="promocoes" class="section-card" data-aos="fade-up">
-        <h2>Destinos em Promoção</h2>
-        <div class="promo-grid">
-            <article class="promo-item" data-aos="zoom-in" data-destination="paris">
-                <img src="images/paris.jpg" alt="Torre Eiffel" loading="lazy">
-                <h3>Paris, França</h3>
-                <p>Apenas 5 vagas por R$ <span class="price-text">3750</span></p>
-                <a href="https://wa.me/553299938030?text=Oi,%20quero%20Paris!" class="btn">Garanta Sua Vaga Agora!</a>
-            </article>
-            <article class="promo-item" data-aos="zoom-in" data-destination="bali">
-                <img src="images/bali.jpg" alt="Praias de Bali" loading="lazy">
-                <h3>Bali, Indonésia</h3>
-                <p>Apenas 5 vagas por R$ <span class="price-text">5098</span></p>
-                <a href="https://wa.me/553299938030?text=Oi,%20quero%20Bali!" class="btn">Garanta Sua Vaga Agora!</a>
-            </article>
-            <article class="promo-item" data-aos="zoom-in" data-destination="machu-picchu">
-                <img src="images/machu.jpg" alt="Machu Picchu" loading="lazy">
-                <h3>Machu Picchu, Peru</h3>
-                <p>Apenas 5 vagas por R$ <span class="price-text">1612</span></p>
-                <a href="https://wa.me/553299938030?text=Oi,%20quero%20Machu%20Picchu!" class="btn">Garanta Sua Vaga Agora!</a>
-            </article>
-        </div>
-    </section>
-
-    <!-- Seção Sobre -->
-    <section id="sobre" class="section-card" data-aos="fade-up">
-        <h2>Sobre a F&P Viagens</h2>
-        <p>Com mais de 10 anos transformando sonhos em realidade, a F&P Viagens oferece preços imbatíveis, suporte 24/7 via WhatsApp e serviços exclusivos para você e seu pet.</p>
-    </section>
-
-    <!-- Seção Depoimentos -->
-    <section id="depoimentos" class="section-card" data-aos="fade-up">
-        <h2>O Que Nossos Clientes Dizem</h2>
-        <div class="depoimento-grid">
-            <article class="depoimento-item" data-aos="zoom-in">
-                <img src="images/cliente-maria.jpg" alt="Maria S." loading="lazy">
-                <p>"Minha viagem a Paris foi um sonho com a F&P!" – Maria S.</p>
-            </article>
-            <article class="depoimento-item" data-aos="zoom-in">
-                <img src="images/cliente-joao.jpg" alt="João P." loading="lazy">
-                <p>"Bali nunca foi tão acessível. Recomendo!" – João P.</p>
-            </article>
-        </div>
-    </section>
-
-    <!-- Seção Serviços -->
-    <section id="servicos" class="section-card" data-aos="fade-up">
-        <h2>Nossos Serviços Exclusivos</h2>
-        <div class="service-grid">
-            <article class="service-item" data-aos="zoom-in">
-                <h3><i class="fas fa-plane"></i> Passagens Aéreas</h3>
-                <p>Voos com tarifas competitivas e opções flexíveis.</p>
-            </article>
-            <article class="service-item" data-aos="zoom-in">
-                <h3><i class="fas fa-paw"></i> Viaje com Pet</h3>
-                <p>Serviços para levar seu pet com segurança.</p>
-            </article>
-        </div>
-    </section>
-
-    <!-- Seção Contato -->
-    <section id="contato" class="section-card" data-aos="fade-up">
-        <h2>Planeje Sua Aventura</h2>
-        <p>Fale comigo agora e garanta 10% OFF na sua próxima viagem!</p>
-        <a href="https://wa.me/553299938030?text=Oi,%20quero%2010%%20OFF!" class="whatsapp-button">Fale Agora</a>
-    </section>
-
-    <!-- Rodapé -->
-    <footer class="footer" data-aos="fade-up">
-        <p>© 2025 F&P Viagens. Todos os direitos reservados.</p>
-        <div class="social-links">
-            <a href="https://x.com/fepviagens" target="_blank"><i class="fab fa-x-twitter"></i></a>
-            <a href="https://instagram.com/fepviagens" target="_blank"><i class="fab fa-instagram"></i></a>
-        </div>
-        <a href="https://wa.me/553299938030" class="whatsapp-float">
-            <i class="fab fa-whatsapp"></i>
-            <span class="whatsapp-tooltip">Fale agora e ganhe 10% OFF!</span>
-        </a>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script>
-        // Inicializa AOS
-        AOS.init({ duration: 800, once: true, offset: 200 });
-
-        // Menu Hamburguer
-        document.querySelector('.hamburger').addEventListener('click', () => {
-            const navMenu = document.querySelector('.nav-menu');
-            navMenu.classList.toggle('active');
-            const spans = document.querySelectorAll('.hamburger span');
-            spans.forEach((span, index) => {
-                span.style.transform = navMenu.classList.contains('active') 
-                    ? `rotate(${index === 1 ? '90deg' : '45deg'}) translate(${index === 1 ? '0' : '-5px'}, ${index === 1 ? '0' : '5px'})` 
-                    : 'none';
-            });
-        });
-
-        // Carrossel Hero
-        new Swiper('.swiper-container', {
-            autoplay: { delay: 5000 },
-            pagination: { el: '.swiper-pagination', clickable: true },
-            loop: true,
-        });
-
-        // Timer de Urgência
-        const countdown = setInterval(() => {
-            let timeLeft = 24 * 60 * 60; // 24h
-            document.querySelectorAll('.promo-item p').forEach(p => {
-                const timer = document.createElement('span');
-                timer.classList.add('timer');
-                timer.textContent = ` | Oferta válida por ${Math.floor(timeLeft / 3600)}h ${Math.floor((timeLeft % 3600) / 60)}m`;
-                if (!p.querySelector('.timer')) p.appendChild(timer);
-            });
-            timeLeft--;
-            if (timeLeft < 0) clearInterval(countdown);
-        }, 1000);
-
-        // WhatsApp Tooltip
-        setTimeout(() => {
-            document.querySelector('.whatsapp-tooltip').style.display = 'block';
-        }, 5000);
-    </script>
-</body>
-</html>
 </body>
 </html>
