@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F&P Viagens - Promoção Relâmpago 24h</title>
+    <meta name="description" content="Promoção relâmpago de 24h! Pacotes exclusivos para Paris, Bali e Machu Picchu com preços imbatíveis – reserve agora com a F&P Viagens!">
+    <meta name="keywords" content="promoção relâmpago, viagens baratas, Paris, Bali, Machu Picchu, agência de viagens, viajar com pet">
+    <meta name="author" content="F&P Viagens">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="F&P Viagens - Promoção Relâmpago 24h">
+    <meta property="og:description" content="Aproveite nossa promoção relâmpago de 24h para Paris, Bali e Machu Picchu – preços baixos e suporte premium!">
+    <meta property="og:image" content="https://midgardo17.github.io/fpviagens/images/fep-viagens-logo.png">
+    <meta property="og:url" content="https://midgardo17.github.io/fpviagens">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Links de Estilo e Bibliotecas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <style>
+        /* === Reset e Estilos Globais === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f4f4f4;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* === Animações Estáticas === */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes neonGlow {
+            0%, 100% { filter: drop-shadow(0 0 8px rgba(37, 211, 102, 0.4)); }
+            50% { filter: drop-shadow(0 0 12px rgba(37, 211, 102, 0.8)); }
+        }
+
+        /* === Utilitários === */
+        .mt-4 { margin-top: 2rem; }
+        .d-block { display: block; }
+
+        /* === Botões === */
+        .btn, .whatsapp-button {
+            display: inline-block;
+            padding: clamp(0.8rem, 2vw, 1.2rem) clamp(1.5rem, 3vw, 2.5rem);
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: clamp(0.9rem, 2vw, 1.2rem);
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5);
+            transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+        }
+
+        .btn:hover, .whatsapp-button:hover,
+        .btn:focus, .whatsapp-button:focus {
+            background: #1EBE57;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(30, 190, 87, 0.7);
+            animation: neonGlow 1.5s infinite;
+        }
+
+        /* === Cabeçalho === */
+        .header {
+            background-color: #007BFF;
+            padding: clamp(15px, 2vw, 20px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-img {
+            height: clamp(60px, 7vw, 80px);
+            width: auto;
+            filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
+            transform: scale(1);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            color: white;
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+        }
+
+        .logo-text .brand-name {
+            font-weight: 700;
+            color: #FFFFFF;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo-text .brand-tagline {
+            font-family: 'Open Sans', sans-serif;
+            font-style: italic;
+            font-size: clamp(0.8rem, 1.8vw, 1rem);
+            color: #28A745;
+        }
+
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            gap: clamp(1rem, 2vw, 2rem);
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+            font-weight: 500;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        .nav-link:hover, .nav-link:focus {
+            color: #28A745;
+            transform: translateY(-2px);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: clamp(4px, 1vw, 5px);
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        /* === Promoção Relâmpago === */
+        .flash-sale {
+            background: linear-gradient(135deg, #FF4500, #FFD700);
+            color: white;
+            padding: clamp(40px, 5vw, 60px) clamp(10px, 2vw, 20px);
+            text-align: center;
+            margin-top: clamp(80px, 10vw, 100px);
+        }
+
+        .flash-sale h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .flash-sale .timer {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 700;
+            margin: 1rem 0;
+            color: #1A3C6D;
+        }
+
+        .promo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(clamp(200px, 25vw, 300px), 1fr));
+            gap: clamp(20px, 3vw, 30px);
+            max-width: 1200px;
+            margin: 2rem auto 0;
+        }
+
+        .promo-item {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .promo-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .promo-item img {
+            width: 100%;
+            height: clamp(150px, 20vw, 200px);
+            object-fit: cover;
+        }
+
+        .promo-item h3 {
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            margin: 15px 0;
+            color: #007BFF;
+            padding: 0 15px;
+        }
+
+        .promo-item p {
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            color: #444;
+            margin-bottom: 15px;
+            padding: 0 15px;
+        }
+
+        .promo-item .btn {
+            margin: 15px;
+        }
+
+        /* === Botão Voltar para Home === */
+        .back-home {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 700;
+            margin-top: 1rem;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .back-home:hover, .back-home:focus {
+            background: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        /* === WhatsApp Flutuante === */
+        .whatsapp-float {
+            position: fixed;
+            bottom: clamp(15px, 2vw, 20px);
+            right: clamp(15px, 2vw, 20px);
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            width: clamp(40px, 5vw, 50px);
+            height: clamp(40px, 5vw, 50px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5);
+            animation: pulse 2s infinite;
+            z-index: 1001;
+        }
+
+        .whatsapp-float:hover {
+            background: #1EBE57;
+            transform: scale(1.1);
+            animation: neonGlow 1.5s infinite;
+        }
+
+        /* === Responsividade === */
+        @media (max-width: 1024px) {
+            .hamburger { display: flex; }
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: clamp(70px, 9vw, 90px);
+                left: 0;
+                width: 100%;
+                background: #007BFF;
+                padding: 1.5rem;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            }
+            .nav-menu.active { display: flex; }
+            .promo-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+        }
+
+        @media (max-width: 768px) {
+            .flash-sale h1 { font-size: clamp(1.8rem, 4vw, 2.5rem); }
+            .flash-sale .timer { font-size: clamp(1.2rem, 2.5vw, 1.5rem); }
+        }
+
+        @media (max-width: 480px) {
+            .promo-grid { grid-template-columns: 1fr; }
+            .whatsapp-float { width: 40px; height: 40px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="images/fep-viagens-logo.png" 
+                     alt="Logo da F&P Viagens" 
+                     title="F&P Viagens - Sua Parceira para Viagens Inesquecíveis" 
+                     class="logo-img" 
+                     loading="lazy">
+                <div class="logo-text">
+                    <span class="brand-name">F&P</span>
+                    <span class="brand-tagline">Viagens</span>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="#promocoes" class="nav-link">Promoções</a></li>
+                <li><a href="index.html#contato" class="nav-link">Contato</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Promoção Relâmpago -->
+    <section id="promocoes" class="flash-sale">
+        <h1>Promoção Relâmpago – Só 24 Horas!</h1>
+        <div class="timer" id="countdown">Oferta válida por 24h 00m 00s</div>
+        <div class="promo-grid">
+            <article class="promo-item">
+                <img src="images/paris.jpg" alt="Torre Eiffel em Paris" loading="lazy">
+                <h3>Paris, França</h3>
+                <p>Explore a cidade luz, com sua arquitetura icônica, gastronomia refinada e romantismo sem igual. A partir de R$ 3.750!</p>
+                <a href="https://wa.me/553299938030?text=Oi,%20quero%20a%20promo%20relâmpago%20para%20Paris!" class="btn">Garanta Agora!</a>
+            </article>
+            <article class="promo-item">
+                <img src="images/bali.jpg" alt="Praias de Bali" loading="lazy">
+                <h3>Bali, Indonésia</h3>
+                <p>Relaxe em praias paradisíacas, templos exóticos e uma cultura vibrante que encanta o mundo. A partir de R$ 5.098!</p>
+                <a href="https://wa.me/553299938030?text=Oi,%20quero%20a%20promo%20relâmpago%20para%20Bali!" class="btn">Garanta Agora!</a>
+            </article>
+            <article class="promo-item">
+                <img src="images/machu.jpg" alt="Machu Picchu" loading="lazy">
+                <h3>Machu Picchu, Peru</h3>
+                <p>Aventure-se pelas ruínas incas, com vistas deslumbrantes e história milenar nas montanhas. A partir de R$ 1.612!</p>
+                <a href="https://wa.me/553299938030?text=Oi,%20quero%20a%20promo%20relâmpago%20para%20Machu%20Picchu!" class="btn">Garanta Agora!</a>
+            </article>
+        </div>
+        <a href="index.html" class="back-home">Voltar para Home</a>
+    </section>
+
+    <!-- WhatsApp Flutuante -->
+    <a href="https://wa.me/553299938030?text=Oi,%20quero%20aproveitar%20a%20promo%20relâmpago!" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script>
+        // Menu Hamburguer
+        document.querySelector('.hamburger').addEventListener('click', () => {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.classList.toggle('active');
+            const spans = document.querySelectorAll('.hamburger span');
+            spans.forEach((span, index) => {
+                span.style.transform = navMenu.classList.contains('active') 
+                    ? `rotate(${index === 1 ? '90deg' : '45deg'}) translate(${index === 1 ? '0' : '-5px'}, ${index === 1 ? '0' : '5px'})` 
+                    : 'none';
+            });
+        });
+
+        // Cronômetro de 24 horas
+        const countdown = setInterval(() => {
+            let timeLeft = 24 * 60 * 60; // 24h em segundos
+            const timer = document.getElementById('countdown');
+            const hours = Math.floor(timeLeft / 3600);
+            const minutes = Math.floor((timeLeft % 3600) / 60);
+            const seconds = timeLeft % 60;
+            timer.textContent = `Oferta válida por ${hours}h ${minutes}m ${seconds}s`;
+            timeLeft--;
+            if (timeLeft < 0) {
+                clearInterval(countdown);
+                timer.textContent = "Promoção Encerrada!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
